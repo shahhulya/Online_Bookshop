@@ -1,5 +1,6 @@
-function App() {
-  return <div className="App"></div>;
-}
+import React from "react";
+import Routes from "./Routes";
 
-export default App;
+export default function App() {
+  return <Routes />;
+}

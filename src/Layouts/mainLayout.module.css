@@ -1,0 +1,57 @@
+.nav__content {
+  margin-left: 15%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__content h6 {
+  margin: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: color 0.4s;
+}
+
+.nav__content h6:hover {
+  color: #ea0042;
+}
+
+.logo {
+  position: absolute;
+  right: 85%;
+  top: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #ea0042;
+  transform: skewX(-30deg);
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 30px;
+}
+
+.menuBookIcon {
+  transform: skewX(30deg);
+}
+
+.top__menu {
+  display: flex;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 720px) {
+  .logo {
+    left: -130px;
+  }
+  .top__menu {
+    display: none;
+  }
+  .nav__content {
+    justify-content: flex-end;
+  }
+}
+
+.top__menu2 {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
