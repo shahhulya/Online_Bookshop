@@ -1,0 +1,12 @@
+.burgerMenu {
+  margin: auto 10px;
+  transform: skewX(30deg);
+  display: none !important;
+  color: #fff;
+}
+
+@media only screen and (max-width: 720px) {
+  .burgerMenu {
+    display: block !important;
+  }
+}
