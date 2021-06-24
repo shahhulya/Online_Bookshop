@@ -13,11 +13,15 @@ export default function ItemsSlider() {
   // const [count, setCount] = useState(null);
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth <= 1000) {
-      setNumber(4);
-    } else {
+    if (window.innerWidth <= 1256) {
+      setNumber(5);
+    }
+    if (window.innerWidth >= 1256) {
       setNumber(6);
     }
+    // if (window.innerWidth <= 1000) {
+    //   setNumber(4);
+    // }
   });
 
   // if (window.innerWidth <= 1000) {

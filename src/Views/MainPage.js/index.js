@@ -10,11 +10,8 @@ export default function MainPage() {
   return (
     <MainLayout>
       <HeroSlider />
-      {/* <ItemsSlider /> */}
-      <Card />
-     
-    
-
+      <ItemsSlider />
+      {/* <Card /> */}
     </MainLayout>
   );
 }
