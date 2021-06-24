@@ -11,8 +11,6 @@ export default function MainPage() {
       <HeroSlider />
       {/* <ItemsSlider /> */}
       <Card />
-     
-    
     </MainLayout>
   );
 }
