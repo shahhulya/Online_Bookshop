@@ -7,12 +7,15 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <div className={classes.footer_wrapper}>
-      <div className={classes.footer_section}>
+      {/* <div className={classes.footer_section}> */}
+      <div>
         <h3>Разделы</h3>
         <li>Романы</li>
         <li>Драмы</li>
         <li>Обзоры</li>
       </div>
+
+      {/* </div> */}
       <div>
         <Link to="/AboutUsPage">
           <h3> О нас</h3>

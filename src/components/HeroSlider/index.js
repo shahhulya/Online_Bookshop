@@ -1,6 +1,7 @@
 import React from "react";
 import { Carousel } from "3d-react-carousal";
-import classes from "./heroSlider.module.css";
+import classes from "../HeroSlider/heroSlider.module.css";
+
 
 export default function HeroSlider() {
   let slides = [
@@ -12,7 +13,7 @@ export default function HeroSlider() {
   ];
   return (
     <div className={classes.carousel}>
-      <Carousel slides={slides} autoplay={true} interval={5000} />
+      <Carousel slides={slides} autoplay={false} interval={5000} />
     </div>
   );
 }
