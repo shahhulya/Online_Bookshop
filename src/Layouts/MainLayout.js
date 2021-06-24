@@ -14,6 +14,8 @@ import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined"
 import MenuRoundedIcon from "@material-ui/icons/MenuRounded";
 import MenuBar from "../components/MenuBar";
 import HeroSlider from "../components/HeroSlider";
+import Footer from "../components/Footer/Footer";
+import FooterSocial from "../components/FooterSocial/FooterSocial";
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -70,6 +72,8 @@ export default function MainLayout(props) {
       <main style={{ backgroundColor: "#0f0d19" }}>
         <Container>{props.children}</Container>
       </main>
+      <Footer />
+      <FooterSocial />
     </React.Fragment>
   );
 }
