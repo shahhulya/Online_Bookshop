@@ -7,9 +7,9 @@ import MainLayout from "../../Layouts/MainLayout";
 export default function MainPage() {
   return (
     <MainLayout>
-      <HeroSlider />
-      {/* <ItemsSlider /> */}
-      <Card />
+      {/* <HeroSlider /> */}
+      <ItemsSlider />
+      {/* <Card /> */}
     </MainLayout>
   );
 }

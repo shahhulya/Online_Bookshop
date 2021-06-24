@@ -60,7 +60,7 @@ export default function MainLayout(props) {
               </div>
               <div className={classes.top__menu2}>
                 <SearchModal />
-                {/* <AccountCircleOutlinedIcon /> */}
+                <AccountCircleOutlinedIcon className={classes.accountIcon} />
               </div>
             </div>
           </Toolbar>
