@@ -1,5 +1,7 @@
 .footer_wrapper {
   display: flex;
+  
+  align-items: center;
   justify-content: space-around;
   /* width: 100%; */
   max-height: 180px;
@@ -8,6 +10,7 @@
   padding: 30px 80px;
   color: rgb(255, 255, 255);
   font-size: small;
+  /* bottom: 0; */
 }
 
 @media only screen and (max-width: 500px) {
