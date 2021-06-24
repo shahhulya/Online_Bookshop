@@ -1,6 +1,5 @@
 import React from "react";
 import classes from "../Footer/footer.module.css";
-// import AboutUsPage from "../../Views/AboutUsPage";
 
 import { Link } from "react-router-dom";
 
@@ -21,8 +20,10 @@ export default function Footer() {
         <Link to="/AboutUsPage">
           <li style={{ color: "white" }}>О компании</li>
         </Link>
+        <Link to="/AddressPage">
+          <li style={{ color: "white" }}>Адреса и контакты магазинов</li>
+        </Link>
 
-        <li>Адреса и контакты магазинов</li>
         <li>Партнеры</li>
       </div>
     </div>

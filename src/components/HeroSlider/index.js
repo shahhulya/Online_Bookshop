@@ -2,7 +2,6 @@ import React from "react";
 import { Carousel } from "3d-react-carousal";
 import classes from "../HeroSlider/heroSlider.module.css";
 
-
 export default function HeroSlider() {
   let slides = [
     <img src="https://picsum.photos/800/300/?random" alt="1" />,
@@ -13,7 +12,7 @@ export default function HeroSlider() {
   ];
   return (
     <div className={classes.carousel}>
-      <Carousel slides={slides} autoplay={false} interval={5000} />
+      <Carousel slides={slides} autoplay={false} interval={4000} />
     </div>
   );
 }
