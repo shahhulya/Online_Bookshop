@@ -1,3 +1,12 @@
 .itemsSlider {
   margin-top: 50px;
 }
+
+.arrowIcon {
+  color: #fff;
+  font-size: 35px !important;
+}
+
+.arrowIcon:active {
+  font-size: 30px !important;
+}

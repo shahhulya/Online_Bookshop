@@ -1,37 +1,52 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ItemsCarousel from "react-items-carousel";
+import classes from "./itemsSlider.module.css";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import classes from "./itemsSlider.module.css";
 import Card from "../Card";
 
 export default function ItemsSlider() {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
-  const chevronWidth = 40;
+  const [number, setNumber] = useState(6);
+  const chevronWidth = 0;
+
+  // const [count, setCount] = useState(null);
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth <= 1000) {
+      setNumber(4);
+    } else {
+      setNumber(6);
+    }
+  });
+
+  // if (window.innerWidth <= 1000) {
+  //   setCount(4);
+  // } else {
+  //   setCount(6);
+  // }
+
   return (
-    <div
-      className={classes.itemsSlider}
-      style={{ padding: `0 ${chevronWidth}px` }}
-    >
+    <div style={{ padding: `0 ${chevronWidth}px` }}>
       <ItemsCarousel
         requestToChangeActive={setActiveItemIndex}
         activeItemIndex={activeItemIndex}
-        numberOfCards={6}
-        gutter={20}
-        leftChevron={<button>{<ArrowBackIosIcon />}</button>}
-        rightChevron={<button>{<ArrowForwardIosIcon />}</button>}
+        numberOfCards={number}
+        gutter={-10}
+        leftChevron={<ArrowBackIosIcon className={classes.arrowIcon} />}
+        rightChevron={<ArrowForwardIosIcon className={classes.arrowIcon} />}
         outsideChevron
         chevronWidth={chevronWidth}
       >
-        <div style={{ height: 250, background: "#EEE" }}>first card</div>
-        <div style={{ height: 250 }}>
-          <Card />
-        </div>
-        <div style={{ height: 250, background: "#EEE" }}>Third card</div>
-        <div style={{ height: 250, background: "#EEE" }}>Fourth card</div>
-        <div style={{ height: 250, background: "#EEE" }}>Fourth card</div>
-        <div style={{ height: 250, background: "#EEE" }}>Fourth card</div>
-        <div style={{ height: 250, background: "#EEE" }}>Fourth card</div>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </ItemsCarousel>
     </div>
   );
