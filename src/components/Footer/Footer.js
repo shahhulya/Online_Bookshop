@@ -1,15 +1,14 @@
 import React from "react";
 import classes from "../Footer/footer.module.css";
-// import AboutUsPage from "../../Views/AboutUsPage";
 
 import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
     <div className={classes.footer_wrapper}>
-      {/* <div className={classes.footer_section}> */}
-      <div>
-        <h3>Разделы</h3>
+      <div className={classes.footer_section}>
+        <h3 style={{ color: "crimson" }}>Разделы</h3>
+
         <li>Романы</li>
         <li>Драмы</li>
         <li>Обзоры</li>
@@ -17,12 +16,14 @@ export default function Footer() {
 
       {/* </div> */}
       <div>
+        <h3 style={{ color: "crimson" }}> О нас</h3>
         <Link to="/AboutUsPage">
-          <h3> О нас</h3>
+          <li style={{ color: "white" }}>О компании</li>
+        </Link>
+        <Link to="/AddressPage">
+          <li style={{ color: "white" }}>Адреса и контакты магазинов</li>
         </Link>
 
-        <li>О компании</li>
-        <li>Адреса и контакты магазинов</li>
         <li>Партнеры</li>
       </div>
     </div>
