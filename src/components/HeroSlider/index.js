@@ -1,6 +1,6 @@
 import React from "react";
 import { Carousel } from "3d-react-carousal";
-import classes from "../HeroSlider/heroSlider.module.css";
+import classes from "../HeroSlider/style.css";
 
 
 export default function HeroSlider() {
