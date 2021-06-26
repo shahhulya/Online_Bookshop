@@ -66,7 +66,8 @@
 .accountIcon {
   margin-left: 10px;
   color: #63606d;
-  transition: 0.4s;
+  cursor: pointer;
+  transition: color 0.4s;
 }
 
 .accountIcon:hover {

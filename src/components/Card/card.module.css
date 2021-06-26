@@ -9,6 +9,12 @@
   background-size: cover;
 }
 
+@media only screen and (max-width: 450px) {
+  .card {
+    height: 200px;
+  }
+}
+
 .card:hover {
   transform: scale(1.1);
 }
