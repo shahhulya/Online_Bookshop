@@ -14,6 +14,7 @@ import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined"
 import MenuRoundedIcon from "@material-ui/icons/MenuRounded";
 import MenuBar from "../components/MenuBar";
 import HeroSlider from "../components/HeroSlider";
+import Tooltip from "@material-ui/core/Tooltip";
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -54,7 +55,9 @@ export default function MainLayout(props) {
             <div className={classes.nav__content}>
               <div className={classes.top__menu}>
                 <Typography variant="h6">Главное</Typography>
-                <Typography variant="h6">Книги</Typography>
+                <Tooltip title="Add" interactive>
+                  <Typography variant="h6">Книги</Typography>
+                </Tooltip>
                 <Typography variant="h6">Авторы</Typography>
                 <Typography variant="h6">Жанры</Typography>
               </div>
