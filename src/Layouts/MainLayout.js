@@ -19,6 +19,7 @@ import FooterSocial from "../components/FooterSocial/FooterSocial";
 import { Fab } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -67,7 +68,9 @@ export default function MainLayout(props) {
               </div>
               <div className={classes.top__menu2}>
                 <SearchModal />
-                <AccountCircleOutlinedIcon className={classes.accountIcon} />
+                <Link to="/login">
+                  <AccountCircleOutlinedIcon className={classes.accountIcon} />
+                </Link>
               </div>
             </div>
           </Toolbar>
