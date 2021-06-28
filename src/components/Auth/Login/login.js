@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axiosInstance from '../../../axios';
+import axiosInstance from '../../../ApiAuth';
 import { useHistory } from 'react-router-dom';
 //MaterialUI
 import Avatar from '@material-ui/core/Avatar';
@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+
     },
     avatar: {
         margin: theme.spacing(1),
@@ -61,6 +62,7 @@ export default function SignIn() {
             })
             .then((res) => {
                 console.log(res)
+
                 localStorage.setItem('access_token', res.data.access);
                 localStorage.setItem('refresh_token', res.data.refresh);
                 axiosInstance.defaults.headers['Authorization'] =
@@ -127,7 +129,7 @@ export default function SignIn() {
                             </Link>
                         </Grid>
                         <Grid item>
-                            <Link href="#" variant="body2">
+                            <Link href="/register" variant="body2">
                                 {"Don't have an account? Sign Up"}
                             </Link>
                         </Grid>
