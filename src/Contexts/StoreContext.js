@@ -3,6 +3,7 @@ import React, { useReducer } from "react";
 
 const INIT_STATE = {
   products: [],
+  categories: [],
 };
 
 const reducer = (state = INIT_STATE, action) => {
@@ -11,6 +12,11 @@ const reducer = (state = INIT_STATE, action) => {
       return {
         ...state,
         products: action.payload,
+      };
+    case "SET_CATEGORIES":
+      return {
+        ...state,
+        categories: action.payload,
       };
     default:
       return state;
@@ -24,9 +30,9 @@ export default function StoreContextProvider(props) {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
   const fetchProducts = async () => {
-    const response = await axios.get(`http://34.89.166.252/api/v1/reviews/`);
+    const response = await axios.get(`${URL}/api/v1/reviews/?page=1`);
     const products = response.data.results;
-    console.log(products);
+    console.log(response);
 
     dispatch({
       type: "SET_PRODUCTS",
@@ -34,8 +40,26 @@ export default function StoreContextProvider(props) {
     });
   };
 
+  const fetchCategories = async () => {
+    const response = await axios.get(`${URL}/api/v1/categories/list/`);
+    const categories = response.data;
+    console.log(categories);
+
+    dispatch({
+      type: "SET_CATEGORIES",
+      payload: categories,
+    });
+  };
+
   return (
-    <storeContext.Provider value={{ products: state.products, fetchProducts }}>
+    <storeContext.Provider
+      value={{
+        products: state.products,
+        categories: state.categories,
+        fetchProducts,
+        fetchCategories,
+      }}
+    >
       {props.children}
     </storeContext.Provider>
   );
