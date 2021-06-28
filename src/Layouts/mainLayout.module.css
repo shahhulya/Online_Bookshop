@@ -73,3 +73,9 @@
 .accountIcon:hover {
   color: #fff;
 }
+
+.addBtn {
+  position: fixed;
+  top: 50%;
+  right: 15;
+}
