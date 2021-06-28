@@ -65,41 +65,41 @@ export default function SignUp() {
             })
             .then((res) => {
                 history.push('/login');
-                console.log(res);
+                // console.log(res);
                 console.log(res.data);
             });
-        const handleSubmit = (e) => {
-            e.preventDefault();
-            console.log(formData);
+        // const handleSubmit = (e) => {
+        //     e.preventDefault();
+        //     console.log(formData);
 
-            // axios.post(`http://92.245.126.22/api/v1/accounts/register/`,
-            //     {
-            //         "email":
-            //             "kubatbek.evrazfit1111@gmail.com"
-            //         ,
-            //         "password":
-            //             "123456123"
-            //         ,
-            //         "password2":
-            //             "123456123"
-            //     })
-            // axiosInstance
-            //     .post(`accounts/register`, {
-            //         "email":
-            //             "kubatbek1990@mail.ru"
-            //         ,
-            //         "password":
-            //             "123456"
-            //         ,
-            //         "password2":
-            //             "123456"
+        // axios.post(`http://92.245.126.22/api/v1/accounts/register/`,
+        //     {
+        //         "email":
+        //             "kubatbek.evrazfit1111@gmail.com"
+        //         ,
+        //         "password":
+        //             "123456123"
+        //         ,
+        //         "password2":
+        //             "123456123"
+        //     })
+        // axiosInstance
+        //     .post(`accounts/register`, {
+        //         "email":
+        //             "kubatbek1990@mail.ru"
+        //         ,
+        //         "password":
+        //             "123456"
+        //         ,
+        //         "password2":
+        //             "123456"
 
-            //     })
-            //     .then((res) => {
-            //         history.push('/login');
-            //         console.log(res);
-            //         console.log(res.data);
-        };
+        //     })
+        //     .then((res) => {
+        //         history.push('/login');
+        //         console.log(res);
+        //         console.log(res.data);
+
     };
 
     const classes = useStyles();

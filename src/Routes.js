@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AddressPage from "./Views/AddressPage/index";
-import Register from "./components/Authorization/Register/register.js";
-import Logout from "./components/Authorization/Logout/logout.js";
-import Login from "./components/Authorization/Login/login.js";
+import Register from "./components/Auth/Register/register.js";
+import Logout from "./components/Auth/Logout/logout.js";
+import Login from "./components/Auth/Login/login.js";
 // import AboutUs from "./components/AboutUs/AboutUs.js";
 import AboutUsPage from "./Views/AboutUsPage/index.js";
 
