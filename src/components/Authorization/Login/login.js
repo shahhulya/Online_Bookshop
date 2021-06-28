@@ -55,11 +55,12 @@ export default function SignIn() {
         console.log(formData);
 
         axiosInstance
-            .post(`api/v1/accounts/login/`, {
+            .post(`accounts/login/`, {
                 email: formData.email,
                 password: formData.password,
             })
             .then((res) => {
+                console.log(res)
                 localStorage.setItem('access_token', res.data.access);
                 localStorage.setItem('refresh_token', res.data.refresh);
                 axiosInstance.defaults.headers['Authorization'] =

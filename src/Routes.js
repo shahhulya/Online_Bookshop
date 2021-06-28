@@ -8,6 +8,8 @@ import Login from "./components/Authorization/Login/login.js";
 import AboutUsPage from "./Views/AboutUsPage/index.js";
 
 import MainPage from "./Views/MainPage.js";
+import ProductDetailPage from "./Views/ProductDetailPage/index.js";
+import ProductCreatePage from "./Views/ProductCreatePage/ProductCreatePage";
 
 export default function Routes() {
   return (
@@ -18,7 +20,8 @@ export default function Routes() {
         <Route path="/register" component={Register} exact />
         <Route path="/login" component={Login} exact />
         <Route path="/logout" component={Logout} exact />
-        {/* <Route path="/register" component={Register} exact /> */}
+        <Route exact path="/products/create" component={ProductCreatePage} />
+        <Route exact path="/products/:id" component={ProductDetailPage} />
         <Route exact path="/AboutUsPage" component={AboutUsPage} />
         <Route exact path="/AddressPage" component={AddressPage} />
       </Switch>

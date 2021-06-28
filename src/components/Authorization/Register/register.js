@@ -13,6 +13,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -20,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        background: 'white',
     },
     avatar: {
         margin: theme.spacing(1),
@@ -52,11 +54,9 @@ export default function SignUp() {
             [e.target.name]: e.target.value.trim(),
         });
     };
-
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formData);
-
         axiosInstance
             .post(`accounts/register/`, {
                 email: formData.email,
@@ -68,6 +68,38 @@ export default function SignUp() {
                 console.log(res);
                 console.log(res.data);
             });
+        const handleSubmit = (e) => {
+            e.preventDefault();
+            console.log(formData);
+
+            // axios.post(`http://92.245.126.22/api/v1/accounts/register/`,
+            //     {
+            //         "email":
+            //             "kubatbek.evrazfit1111@gmail.com"
+            //         ,
+            //         "password":
+            //             "123456123"
+            //         ,
+            //         "password2":
+            //             "123456123"
+            //     })
+            // axiosInstance
+            //     .post(`accounts/register`, {
+            //         "email":
+            //             "kubatbek1990@mail.ru"
+            //         ,
+            //         "password":
+            //             "123456"
+            //         ,
+            //         "password2":
+            //             "123456"
+
+            //     })
+            //     .then((res) => {
+            //         history.push('/login');
+            //         console.log(res);
+            //         console.log(res.data);
+        };
     };
 
     const classes = useStyles();

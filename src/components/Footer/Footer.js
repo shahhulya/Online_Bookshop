@@ -2,6 +2,7 @@ import React from "react";
 import classes from "../Footer/footer.module.css";
 
 import { Link } from "react-router-dom";
+import FooterSocial from "../FooterSocial/FooterSocial";
 
 export default function Footer() {
   return (
