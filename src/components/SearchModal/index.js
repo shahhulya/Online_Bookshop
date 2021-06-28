@@ -43,7 +43,7 @@ export default function SearchModal() {
           <div className={classes.paper}>
             <CloseIcon className={classes.closeIcon} onClick={handleClose} />
             <h1>Поиск</h1>
-            <input placeholder="Фильмы, персонажи, жанры"></input>
+            <input placeholder=" Авторы, персонажи, жанры"></input>
           </div>
         </Fade>
       </Modal>

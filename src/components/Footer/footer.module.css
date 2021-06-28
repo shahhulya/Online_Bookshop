@@ -1,6 +1,5 @@
 .footer_wrapper {
   display: flex;
-  
   align-items: center;
   justify-content: space-around;
   /* width: 100%; */
@@ -11,6 +10,9 @@
   color: rgb(255, 255, 255);
   font-size: small;
   /* bottom: 0; */
+}
+.footer_wrapper li:hover {
+  color: crimson;
 }
 
 @media only screen and (max-width: 500px) {
