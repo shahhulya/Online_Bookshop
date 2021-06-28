@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
@@ -11,14 +11,24 @@ import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import MenuRoundedIcon from "@material-ui/icons/MenuRounded";
+import CategoryIcon from "@material-ui/icons/Category";
 import menuBarClasses from "./menuBar.module.css";
+import ExpandLess from "@material-ui/icons/ExpandLess";
+import ExpandMore from "@material-ui/icons/ExpandMore";
+import Collapse from "@material-ui/core/Collapse";
+import StarBorder from "@material-ui/icons/StarBorder";
+import { storeContext } from "../../Contexts/StoreContext";
 
 const useStyles = makeStyles({
   list: {
     width: 250,
+    backgroundColor: "#f6f5ff",
   },
   fullList: {
     width: "auto",
+  },
+  nested: {
+    fontSize: 10,
   },
 });
 
@@ -27,6 +37,17 @@ export default function MenuBar() {
   const [state, setState] = React.useState({
     left: false,
   });
+  const [open, setOpen] = React.useState(true);
+
+  const { categories, fetchCategories } = useContext(storeContext);
+
+  useEffect(() => {
+    fetchCategories();
+  }, []);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -45,20 +66,25 @@ export default function MenuBar() {
         [classes.fullList]: anchor === "top" || anchor === "bottom",
       })}
       role="presentation"
-      onClick={toggleDrawer(anchor, false)}
+      // onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
+      <ListItem button onClick={handleClick}>
+        <ListItemIcon>
+          <CategoryIcon />
+        </ListItemIcon>
+        <ListItemText primary="Categories" />
+        {open ? <ExpandLess /> : <ExpandMore />}
+      </ListItem>
+      <Collapse in={open} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+          {categories.map((category) => (
+            <ListItem key={category.id} button className={classes.nested}>
+              <ListItemText primary={category.name}></ListItemText>
+            </ListItem>
+          ))}
+        </List>
+      </Collapse>
     </div>
   );
 

@@ -16,6 +16,9 @@ import MenuBar from "../components/MenuBar";
 import HeroSlider from "../components/HeroSlider";
 import Footer from "../components/Footer/Footer";
 import FooterSocial from "../components/FooterSocial/FooterSocial";
+import { Fab } from "@material-ui/core";
+import AddIcon from "@material-ui/icons/Add";
+import { useHistory } from "react-router";
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -43,6 +46,8 @@ ElevationScroll.propTypes = {
 };
 
 export default function MainLayout(props) {
+  const history = useHistory();
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -70,7 +75,17 @@ export default function MainLayout(props) {
       </ElevationScroll>
       <Toolbar />
       <main style={{ backgroundColor: "#0f0d19" }}>
-        <Container>{props.children}</Container>
+        <Container>
+          {props.children}
+          <Fab
+            onClick={() => history.push("/products/create")}
+            className={classes.addBtn}
+            color="secondary"
+            aria-label="add"
+          >
+            <AddIcon />
+          </Fab>
+        </Container>
       </main>
       <Footer />
       <FooterSocial />
