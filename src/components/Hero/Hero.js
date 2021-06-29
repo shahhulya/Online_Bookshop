@@ -2,6 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import vid from "../../assets/videos/HeroVideo.mp4";
 import classes from "./hero.module.css";
+import "typeface-roboto";
 
 export default function Hero() {
   const history = useHistory();
@@ -13,10 +14,10 @@ export default function Hero() {
       </video>
 
       <div>
-        <h1>Открой свою книгу</h1>
-        <button onClick={() => history.push("/register")} className="btn">
+        {/* <h1>Открой свою книгу</h1> */}
+        {/* <button onClick={() => history.push("/register")} className="btn">
           join
-        </button>
+        </button> */}
       </div>
     </div>
   );
