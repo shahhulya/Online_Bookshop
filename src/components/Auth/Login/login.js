@@ -28,14 +28,18 @@ const useStyles = makeStyles((theme) => ({
   form: {
     width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(1),
+
     color: "white",
+
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
 }));
 
-export default function SignIn() {
+
+export default function Login() {
+
   const history = useHistory();
   const initialFormData = Object.freeze({
     email: "",
@@ -76,6 +80,7 @@ export default function SignIn() {
   const classes = useStyles();
 
   return (
+
     <Container
       //   style={{ backgroundColor: "gray" }}
       component="main"
@@ -85,11 +90,14 @@ export default function SignIn() {
       <div className={classes.paper}>
         <Avatar className={classes.avatar}></Avatar>
         <Typography style={{ color: "white" }} component="h1" variant="h5">
+
           Sign in
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
+
             style={{ backgroundColor: "white" }}
+
             variant="outlined"
             margin="normal"
             required
@@ -102,7 +110,9 @@ export default function SignIn() {
             onChange={handleChange}
           />
           <TextField
+
             style={{ backgroundColor: "white" }}
+
             variant="outlined"
             margin="normal"
             required
@@ -115,6 +125,7 @@ export default function SignIn() {
             onChange={handleChange}
           />
           <FormControlLabel
+
             control={
               <Checkbox
                 style={{ backgroundColor: "white", margin: "10px" }}
@@ -122,6 +133,7 @@ export default function SignIn() {
                 color="primary"
               />
             }
+
             label="Remember me"
           />
           <Button
