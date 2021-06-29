@@ -56,6 +56,10 @@ export default function StoreContextProvider(props) {
       payload: categories,
     });
   };
+  
+
+
+
 
   // const fetchCategoryProducts = async (categoryId) => {
   //   const response = await axios.get(`${URL}/products/?category=${brandId}`);

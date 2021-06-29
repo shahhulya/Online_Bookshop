@@ -57,11 +57,17 @@ export default function MainLayout(props) {
           <Toolbar>
             <Typography className={classes.logo}>
               <MenuBar className={classes.burgerMenu} />
+
               <MenuBookIcon className={classes.menuBookIcon} fontSize="large" />
             </Typography>
             <div className={classes.nav__content}>
               <div className={classes.top__menu}>
-                <Typography variant="h6">Главное</Typography>
+                <Link
+                  style={({ textDecoration: "none" }, { color: "white" })}
+                  to="/main"
+                >
+                  <Typography variant="h6">Главное</Typography>
+                </Link>
                 <Typography variant="h6">Книги</Typography>
                 <Typography variant="h6">Авторы</Typography>
                 <Typography variant="h6">Жанры</Typography>

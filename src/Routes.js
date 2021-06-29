@@ -32,7 +32,7 @@ export default function Routes() {
         <Route exact path="/category/:id" component={CategoryPage} />
         <Route exact path="/AboutUsPage" component={AboutUsPage} />
         <Route exact path="/AddressPage" component={AddressPage} />
-        <Route exact path="/pathlink#yourAnchorTag" component={ItemsSlider} />
+        <Route exact path="/main" component={MainPage} />
       </Switch>
 
       {/* </AuthProvider> */}
