@@ -1,0 +1,49 @@
+/* * {
+  padding: 0 1px !important;
+} */
+.hero {
+  display: flex;
+  max-width: 1500px;
+  align-items: center;
+  font-family: "Benne", serif;
+}
+.hero video {
+  /* width: 100%; */
+  /* max-height: 500px;
+  height: 70%; */
+  max-width: 1500px;
+  width: 100%;
+}
+
+.hero div {
+  margin: 0 auto;
+  display: flex;
+}
+.hero h1 {
+  max-width: 890px;
+  color: #fff;
+  font-weight: 300;
+  font-size: 30px;
+  text-align: center;
+}
+.hero h1:hover {
+  color: rgb(31, 27, 46);
+}
+
+@media only screen and (max-width: 768px) {
+  .hero {
+    display: none;
+    margin: 40px;
+    max-width: 600px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    max-height: 320px;
+  }
+  h1 {
+    margin-bottom: 100px;
+    max-width: 150px;
+  }
+  .hero video {
+    margin: 20px;
+    max-width: 100%;
+  }
+}

@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import Hero from "../../components/Hero/Hero";
 import HeroSlider from "../../components/HeroSlider";
 import ItemsSlider from "../../components/ItemsSlider";
 import { storeContext } from "../../Contexts/StoreContext";
@@ -14,6 +15,7 @@ export default function MainPage() {
   return (
     <MainLayout>
       {/* <HeroSlider /> */}
+      <Hero />
       <ItemsSlider products={products} />
     </MainLayout>
   );

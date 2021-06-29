@@ -64,7 +64,7 @@ export default function SignUp() {
                 password2: formData.password2,
             })
             .then((res) => {
-                history.push('/login');
+                history.push('/login/');
                 // console.log(res);
                 console.log(res.data);
             });

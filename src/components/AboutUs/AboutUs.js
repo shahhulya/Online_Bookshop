@@ -5,7 +5,7 @@ import classes from "../AboutUs/aboutUs.module.css";
 export default function AboutUs() {
   return (
     <div className={classes.description}>
-      <p style={{ color: "white" }}>
+      <p style={{ color: "gainsboro" }}>
         Книжный магазин - это книжный онлайн-магазин, целью которого является
         финансовая поддержка местных независимых книжных магазинов. Мы считаем,
         что книжные магазины необходимы для здоровой культуры. Здесь авторы

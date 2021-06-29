@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import axiosInstance from '../../../ApiAuth';
-import { useHistory } from 'react-router-dom';
+import React, { useState } from "react";
+import axiosInstance from "../../../ApiAuth";
+import { useHistory } from "react-router-dom";
 //MaterialUI
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -18,21 +18,23 @@ import Container from '@material-ui/core/Container';
 
 
 
+
+
 const useStyles = makeStyles((theme) => ({
     paper: {
         marginTop: theme.spacing(8),
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
     },
     avatar: {
         margin: theme.spacing(1),
         backgroundColor: theme.palette.secondary.main,
     },
     form: {
-        width: '100%', // Fix IE 11 issue.
+        width: "100%", // Fix IE 11 issue.
         marginTop: theme.spacing(1),
+        color: "white",
     },
     submit: {
         margin: theme.spacing(3, 0, 2),
@@ -42,8 +44,8 @@ const useStyles = makeStyles((theme) => ({
 export default function SignIn() {
     const history = useHistory();
     const initialFormData = Object.freeze({
-        email: '',
-        password: '',
+        email: "",
+        password: "",
     });
 
     const [formData, updateFormData] = useState(initialFormData);
@@ -65,31 +67,36 @@ export default function SignIn() {
                 password: formData.password,
             })
             .then((res) => {
-                console.log(res)
+                console.log(res);
 
-                localStorage.setItem('access_token', res.data.access);
-                localStorage.setItem('refresh_token', res.data.refresh);
-                axiosInstance.defaults.headers['Authorization'] =
-                    'JWT ' + localStorage.getItem('access_token');
-                history.push('/');
+                localStorage.setItem("access_token", res.data.access);
+                localStorage.setItem("refresh_token", res.data.refresh);
+                axiosInstance.defaults.headers["Authorization"] =
+                    "JWT " + localStorage.getItem("access_token");
+                history.push("/");
                 //console.log(res);
-                //console.log(res.data);
+                console.log(res.data);
             });
     };
 
     const classes = useStyles();
 
-    return (
 
-        <Container component="main" maxWidth="xs">
+    return (
+        <Container
+            //   style={{ backgroundColor: "gray" }}
+            component="main"
+            maxWidth="xs"
+        >
             <CssBaseline />
             <div className={classes.paper}>
                 <Avatar className={classes.avatar}></Avatar>
-                <Typography component="h1" variant="h5">
+                <Typography style={{ color: "white" }} component="h1" variant="h5">
                     Sign in
                 </Typography>
                 <form className={classes.form} noValidate>
                     <TextField
+                        style={{ backgroundColor: "white" }}
                         variant="outlined"
                         margin="normal"
                         required
@@ -102,6 +109,7 @@ export default function SignIn() {
                         onChange={handleChange}
                     />
                     <TextField
+                        style={{ backgroundColor: "white" }}
                         variant="outlined"
                         margin="normal"
                         required
@@ -114,7 +122,13 @@ export default function SignIn() {
                         onChange={handleChange}
                     />
                     <FormControlLabel
-                        control={<Checkbox value="remember" color="primary" />}
+                        control={
+                            <Checkbox
+                                style={{ backgroundColor: "white", margin: "10px" }}
+                                value="remember"
+                                color="primary"
+                            />
+                        }
                         label="Remember me"
                     />
                     <Button
@@ -142,6 +156,6 @@ export default function SignIn() {
                 </form>
             </div>
         </Container>
-
     );
+
 }
