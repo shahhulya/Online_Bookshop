@@ -31,6 +31,8 @@
 
 .menuBookIcon {
   transform: skewX(30deg);
+  text-decoration: none;
+  color: #fff;
 }
 
 .top__menu {

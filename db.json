@@ -15,5 +15,30 @@
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "products": [
+    {
+      "values": {
+        "title": "asd",
+        "book_author": "asd",
+        "preview": "asd",
+        "review": "asd",
+        "category": "fantasy",
+        "image": "\thttps://d1ldy8a769gy68.cloudfront.net/300/978/198/216/013/5/9781982160135.jpg",
+        "controllable-states-demo": "[object Object]a"
+      },
+      "id": 1
+    },
+    {
+      "values": {
+        "title": "asd",
+        "book_author": "asdda",
+        "preview": "asddas",
+        "review": "asddas",
+        "category": "asdads",
+        "image": "asddas"
+      },
+      "id": 2
+    }
+  ]
 }

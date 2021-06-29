@@ -11,9 +11,9 @@ import { storeContext } from "../../Contexts/StoreContext";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 
 export default function ProductCreatePage() {
-  const history = useHistory();
+  const { categories, createProduct } = useContext(storeContext);
 
-  const { categories } = useContext(storeContext);
+  const history = useHistory();
 
   const options = categories.map((category) => category);
   console.log(options);
@@ -36,19 +36,18 @@ export default function ProductCreatePage() {
     preview: Yup.string().required("Обязательное поле!"),
     review: Yup.string().required("Обязательное поле!"),
     category: Yup.string().required("Обязательное поле!"),
-    images: Yup.string().required("Обязательное поле!"),
+    image: Yup.string().required("Обязательное поле!"),
   });
 
-  // const onSubmit = (values, actions) => {
-  //   createProduct({
-  //     ...values,
-  //     images: [values.images],
-  //   }).then((id) => {
-  //     actions.resetForm();
-  //     notifySuccess("Продукт был создан!");
-  //     history.push(`/products/${id}`);
-  //   });
-  // };
+  const onSubmit = (values, actions) => {
+    createProduct({
+      values,
+    }).then((id) => {
+      actions.resetForm();
+      notifySuccess("Продукт был создан!");
+      history.push(`/products/${id}`);
+    });
+  };
 
   return (
     <MainLayout>
@@ -56,7 +55,7 @@ export default function ProductCreatePage() {
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
-          // onSubmit={onSubmit}
+          onSubmit={onSubmit}
         >
           {({ values }) => (
             <Form className={classes.form}>
@@ -68,18 +67,15 @@ export default function ProductCreatePage() {
                 variant="outlined"
                 as={TextField}
               />
-
               <ErrorMessage component={TextError} name="title" />
-
               <label>Book Author</label>
               <Field
                 className={classes.input}
-                name="book_autror"
+                name="book_author"
                 variant="outlined"
                 as={TextField}
               />
               <ErrorMessage component={TextError} name="book_author" />
-
               <label>Preview</label>
               <Field
                 className={classes.input}
@@ -88,7 +84,6 @@ export default function ProductCreatePage() {
                 as={TextField}
               />
               <ErrorMessage component={TextError} name="preview" />
-
               <label>Review</label>
               <Field
                 variant="outlined"
@@ -99,9 +94,27 @@ export default function ProductCreatePage() {
                 as={TextField}
               />
               <ErrorMessage component={TextError} name="review" />
-
               <label>Category</label>
-              <div className={classes.category}>
+              <Field
+                variant="outlined"
+                className={classes.input}
+                name="category"
+                as={TextField}
+              />
+              {/* <Autocomplete
+                id="custom-input-demo"
+                options={options.map((category) => category.name)}
+                renderInput={(params) => (
+                  <div ref={params.InputProps.ref}>
+                    <Field
+                      className={classes.input}
+                      variant="outlined"
+                      {...params.inputProps}
+                    />
+                  </div>
+                )}
+              /> */}
+              {/* <div className={classes.category}>
                 <div>{`value: ${value !== null ? `'${value}'` : "null"}`}</div>
                 <div>{`inputValue: '${inputValue}'`}</div>
                 <br />
@@ -120,14 +133,16 @@ export default function ProductCreatePage() {
                   style={{ width: 300 }}
                   renderInput={(params) => (
                     <TextField
+                      name="category"
+                      as={TextField}
                       {...params}
                       label="Controllable"
                       variant="outlined"
                     />
                   )}
                 />
-              </div>
-
+              </div> */}
+              <ErrorMessage component={TextError} name="category" />
               <label>Image</label>
               <Field
                 className={classes.input}
@@ -136,7 +151,6 @@ export default function ProductCreatePage() {
                 as={TextField}
               />
               <ErrorMessage component={TextError} name="image" />
-
               <Button type="submit" color="secondary" variant="contained">
                 Создать
               </Button>

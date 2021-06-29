@@ -104,7 +104,11 @@ export default function Register() {
   const classes = useStyles();
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container
+      component="main"
+      maxWidth="xs"
+      style={{ backgroundColor: "#fff" }}
+    >
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}></Avatar>
