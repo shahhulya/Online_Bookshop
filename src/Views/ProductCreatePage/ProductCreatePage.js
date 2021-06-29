@@ -15,10 +15,10 @@ export default function ProductCreatePage() {
 
   const { categories } = useContext(storeContext);
 
-  const options = categories.map((category) => category.name);
+  const options = categories.map((category) => category);
   console.log(options);
 
-  const [value, setValue] = React.useState(options[0]);
+  const [value, setValue] = React.useState(null);
   const [inputValue, setInputValue] = React.useState("");
 
   const initialValues = {
@@ -116,7 +116,7 @@ export default function ProductCreatePage() {
                     setInputValue(newInputValue);
                   }}
                   id="controllable-states-demo"
-                  options={options}
+                  options={options.map((category) => category.name)}
                   style={{ width: 300 }}
                   renderInput={(params) => (
                     <TextField
