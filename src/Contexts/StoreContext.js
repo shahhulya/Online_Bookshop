@@ -4,6 +4,7 @@ import React, { useReducer } from "react";
 const INIT_STATE = {
   products: [],
   categories: [],
+  // categoryDetail: null,
 };
 
 const reducer = (state = INIT_STATE, action) => {
@@ -18,6 +19,11 @@ const reducer = (state = INIT_STATE, action) => {
         ...state,
         categories: action.payload,
       };
+    // case "SET_CATEGORY_DETAIL":
+    //   return {
+    //     ...state,
+    //     categoryDetail: action.payload,
+    //   };
     default:
       return state;
   }
@@ -50,6 +56,28 @@ export default function StoreContextProvider(props) {
       payload: categories,
     });
   };
+
+  // const fetchCategoryProducts = async (categoryId) => {
+  //   const response = await axios.get(`${URL}/products/?category=${brandId}`);
+  //   const products = response.data;
+
+  //   dispatch({
+  //     type: "SET_PRODUCTS",
+  //     payload: products,
+  //   });
+  // };
+
+  // const fetchCategoryDetail = async (categoryId) => {
+  //   const response = await axios.get(
+  //     `${URL}/api/v1/categories/list/${categoryId}`
+  //   );
+  //   const category = response.data;
+
+  //   dispatch({
+  //     type: "SET_CATEGORY_DETAIL",
+  //     payload: category,
+  //   });
+  // };
 
   return (
     <storeContext.Provider
