@@ -10,18 +10,14 @@ export default function MainPage() {
 
   useEffect(() => {
     fetchProducts();
-    fetchProduct();
+    // fetchProduct();
   }, []);
 
   return (
     <MainLayout>
       {/* <HeroSlider /> */}
       <Hero />
-      <ItemsSlider products={products} />
-
-      <ItemsSlider products={products} />
-      <ItemsSlider products={products} />
-
+      <ItemsSlider products={products} />\
     </MainLayout>
   );
 }
