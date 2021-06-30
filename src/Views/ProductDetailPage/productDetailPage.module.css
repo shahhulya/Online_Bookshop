@@ -34,25 +34,32 @@
   font-size: 30px;
 }
 
-.favorite {
+.actions {
+  display: flex;
+  flex-direction: row;
   max-width: 930px;
   margin: 0 auto;
 }
 
-.favorite p {
+.actions p {
   display: flex;
   align-items: center;
   color: #9c9aa3;
   font-size: 15px;
   cursor: pointer;
   transition: 0.4s;
+  margin: 10px;
 }
 
-.favorite p:hover {
+.actions p:hover {
   color: #fff;
 }
 
-.favorite .bookmark_icon {
+.actions .bookmark_icon {
+  font-size: 30px;
+}
+
+.actions .delete_icon {
   font-size: 30px;
 }
 

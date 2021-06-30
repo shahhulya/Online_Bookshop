@@ -6,10 +6,11 @@ import { storeContext } from "../../Contexts/StoreContext";
 import MainLayout from "../../Layouts/MainLayout";
 
 export default function MainPage() {
-  const { products, fetchProducts } = useContext(storeContext);
+  const { products, fetchProducts, fetchProduct } = useContext(storeContext);
 
   useEffect(() => {
     fetchProducts();
+    fetchProduct();
   }, []);
 
   return (
@@ -17,8 +18,10 @@ export default function MainPage() {
       {/* <HeroSlider /> */}
       <Hero />
       <ItemsSlider products={products} />
+
       <ItemsSlider products={products} />
       <ItemsSlider products={products} />
+
     </MainLayout>
   );
 }

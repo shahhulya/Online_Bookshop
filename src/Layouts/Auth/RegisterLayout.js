@@ -1,4 +1,4 @@
-import React from "react";
+  import React from "react";
 import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -20,72 +20,75 @@ import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 
 function ElevationScroll(props) {
-    const { children, window } = props;
-    // Note that you normally won't need to set the window ref as useScrollTrigger
-    // will default to window.
-    // This is only being set here because the demo is in an iframe.
-    const trigger = useScrollTrigger({
-        disableHysteresis: true,
-        threshold: 0,
-        target: window ? window() : undefined,
-    });
+  const { children, window } = props;
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will default to window.
+  // This is only being set here because the demo is in an iframe.
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+    target: window ? window() : undefined,
+  });
 
-    return React.cloneElement(children, {
-        elevation: trigger ? 4 : 0,
-    });
+  return React.cloneElement(children, {
+    elevation: trigger ? 4 : 0,
+  });
 }
 
 ElevationScroll.propTypes = {
-    children: PropTypes.element.isRequired,
-    /**
-     * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
-     */
-    window: PropTypes.func,
+  children: PropTypes.element.isRequired,
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window: PropTypes.func,
 };
 
-export default function RegisterLayout(props) {
-    const history = useHistory();
+export default function LoginLayout(props) {
+  const history = useHistory();
 
-    return (
-        <React.Fragment>
-            <CssBaseline />
-            <ElevationScroll {...props}>
-                <AppBar style={{ backgroundColor: "#1f1b2e" }}>
-                    <Toolbar>
-                        <Typography className={classes.logo}>
-                            <MenuBar className={classes.burgerMenu} />
-                            <Link to="/">
-                                <MenuBookIcon className={classes.menuBookIcon} fontSize="large" />
-                            </Link>
-                        </Typography>
-                        <div className={classes.nav__content}>
-                            <div className={classes.top__menu}>
-                                <Link
-                                    style={({ textDecoration: "none" }, { color: "white" })}
-                                    to="/"
-                                >
-                                    <Typography variant="h6">Главное</Typography>
-                                </Link>
-                                <Typography variant="h6">Книги</Typography>
-                                <Typography variant="h6">Авторы</Typography>
-                                <Typography variant="h6">Жанры</Typography>
-                            </div>
-                            <div className={classes.top__menu2}>
-                                <SearchModal />
-                                <Link to="/login">
-                                    <AccountCircleOutlinedIcon className={classes.accountIcon} />
-                                </Link>
-                            </div>
-                        </div>
-                    </Toolbar>
-                </AppBar>
-            </ElevationScroll>
-            <Toolbar />
-            <main style={{ backgroundColor: "#0f0d19" }}>
-                <Container>
-                    {props.children}
-                    {/* <Fab
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <ElevationScroll {...props}>
+        <AppBar style={{ backgroundColor: "#1f1b2e" }}>
+          <Toolbar>
+            <Typography className={classes.logo}>
+              <MenuBar className={classes.burgerMenu} />
+              <Link to="/">
+                <MenuBookIcon
+                  className={classes.menuBookIcon}
+                  fontSize="large"
+                />
+              </Link>
+            </Typography>
+            <div className={classes.nav__content}>
+              <div className={classes.top__menu}>
+                <Link
+                  style={({ textDecoration: "none" }, { color: "white" })}
+                  to="/"
+                >
+                  <Typography variant="h6">Главное</Typography>
+                </Link>
+                <Typography variant="h6">Книги</Typography>
+                <Typography variant="h6">Авторы</Typography>
+                <Typography variant="h6">Жанры</Typography>
+              </div>
+              <div className={classes.top__menu2}>
+                <SearchModal />
+                <Link to="/login">
+                  <AccountCircleOutlinedIcon className={classes.accountIcon} />
+                </Link>
+              </div>
+            </div>
+          </Toolbar>
+        </AppBar>
+      </ElevationScroll>
+      <Toolbar />
+      <main style={{ backgroundColor: "#0f0d19" }}>
+        <Container>
+          {props.children}
+          {/* <Fab
             onClick={() => history.push("/products/create")}
             className={classes.addBtn}
             color="secondary"
@@ -93,8 +96,8 @@ export default function RegisterLayout(props) {
           >
             <AddIcon />
           </Fab> */}
-                </Container>
-            </main>
-        </React.Fragment>
-    );
+        </Container>
+      </main>
+    </React.Fragment>
+  );
 }
