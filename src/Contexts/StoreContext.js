@@ -360,8 +360,10 @@ export default function StoreContextProvider(props) {
     });
   };
 
+
+
   const fetchCategories = async () => {
-    // const response = await axios.get(${URL}/api/v1/categories/list/);
+    // const response = await axios.get(`${URL}/api/v1/categories/list/`);
     const response = await axios.get(`${localURL}/categories`);
     const categories = response.data;
     console.log(categories);
@@ -371,6 +373,7 @@ export default function StoreContextProvider(props) {
       payload: categories,
     });
   };
+
 
   const createProduct = async (product) => {
     const response = await axios.post(`${URL}/api/v1/reviews/, product`);
