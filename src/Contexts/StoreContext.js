@@ -56,8 +56,21 @@ export default function StoreContextProvider(props) {
       payload: categories,
     });
   };
-  
 
+
+  const fetchSearchProducts = async (value) => {
+    const response = await axios.get(`${URL}api/v1/reviews/?q=${value}`);
+    const products = response.data;
+    const total = response.headers['x-total-count'];
+
+    dispatch({
+      type: 'SET_PRODUCTS',
+      payload: {
+        data: products,
+        total,
+      },
+    });
+  };
 
 
 
@@ -90,6 +103,7 @@ export default function StoreContextProvider(props) {
         categories: state.categories,
         fetchProducts,
         fetchCategories,
+        fetchSearchProducts,
       }}
     >
       {props.children}
