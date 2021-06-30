@@ -15,10 +15,9 @@ import CategoryPage from "./Views/CategoryPage";
 import LogInPage from "./Views/LogInPage";
 import ItemsSlider from "./components/ItemsSlider";
 import ProductUpdatePage from "./Views/ProductUpdatePage";
-import ProductCreatePage from "./Views/ProductCreatePage/ProductCreatePage";
+import ProductCreatePage from "./Views/ProductCreatePage/index";
 import SearchResultPage from "./Views/SearchResultPage/SearchResultPage";
 import RegisterPage from "./Views/RegisterPage/index";
-
 
 export default function Routes() {
   return (

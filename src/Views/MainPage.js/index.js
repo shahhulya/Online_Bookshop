@@ -17,11 +17,7 @@ export default function MainPage() {
     <MainLayout>
       {/* <HeroSlider /> */}
       <Hero />
-      <ItemsSlider products={products} />
-
-      <ItemsSlider products={products} />
-      <ItemsSlider products={products} />
-
+      <ItemsSlider products={products} />\
     </MainLayout>
   );
 }
