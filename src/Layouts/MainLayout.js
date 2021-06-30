@@ -62,15 +62,13 @@ export default function MainLayout(props) {
             </Typography>
             <div className={classes.nav__content}>
               <div className={classes.top__menu}>
-                <Link
-                  style={({ textDecoration: "none" }, { color: "white" })}
-                  to="/main"
-                >
+                <Link className={classes.link_main} to="/main">
                   <Typography variant="h6">Главное</Typography>
                 </Link>
                 <Typography variant="h6">Книги</Typography>
                 <Typography variant="h6">Авторы</Typography>
                 <Typography variant="h6">Жанры</Typography>
+                <Typography variant="h6">Категории</Typography>
               </div>
               <div className={classes.top__menu2}>
                 <SearchModal />

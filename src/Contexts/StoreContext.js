@@ -56,6 +56,8 @@ export default function StoreContextProvider(props) {
       payload: categories,
     });
   };
+
+
   
 
 

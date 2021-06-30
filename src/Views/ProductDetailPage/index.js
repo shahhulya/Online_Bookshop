@@ -59,7 +59,7 @@ export default function ProductDetailPage() {
           though, it’s a nuanced page-turner, as sharp as it is fun. A biting
           social satire–cum-thriller; dark, playful, and brimming with life.
         </p>
-        <Comments />
+        {/* <Comments /> */}
       </div>
     </MainLayout>
   );
