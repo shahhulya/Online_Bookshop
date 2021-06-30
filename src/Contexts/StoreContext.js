@@ -57,11 +57,19 @@ export default function StoreContextProvider(props) {
     });
   };
 
+  const fetchSearchProducts = async (value) => {
+    const response = await axios.get(`${URL}api/v1/reviews/?q=${value}`);
+    const products = response.data;
+    const total = response.headers["x-total-count"];
 
-  
-
-
-
+    dispatch({
+      type: "SET_PRODUCTS",
+      payload: {
+        data: products,
+        total,
+      },
+    });
+  };
 
   // const fetchCategoryProducts = async (categoryId) => {
   //   const response = await axios.get(`${URL}/products/?category=${brandId}`);
@@ -92,6 +100,7 @@ export default function StoreContextProvider(props) {
         categories: state.categories,
         fetchProducts,
         fetchCategories,
+        fetchSearchProducts,
       }}
     >
       {props.children}
