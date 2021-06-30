@@ -110,8 +110,8 @@ export default function Login() {
           "JWT " + localStorage.getItem("access_token");
         history.push("/");
 
-        //console.log(res);
-        console.log(res.data);
+        console.log(res);
+        // console.log(res.data);
       });
   };
 
@@ -192,6 +192,4 @@ export default function Login() {
       </div>
     </Container>
   );
-
-
 }

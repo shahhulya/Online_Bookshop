@@ -79,7 +79,6 @@
 //     });
 //   };
 
-
 //   const fetchCategories = async () => {
 //     const response = await axios.get(`${URL}/api/v1/categories/list/`);
 //     const categories = response.data;
@@ -91,7 +90,6 @@
 //     });
 //   };
 
-
 //   const fetchSearchProducts = async (value) => {
 //     const response = await axios.get(`${URL}api/v1/reviews/?q=${value}`);
 //     const products = response.data;
@@ -101,7 +99,6 @@
 //       // const response = await axios.get(`${URL}/api/v1/review/${id}`);
 //       const response = await axios.get(`${localURL}/products/${id}`);
 //       const productDetail = response.data;
-
 
 //       dispatch({
 //         type: "SET_PRODUCT_DETAIL",
@@ -134,7 +131,6 @@
 //     //     },
 //     //   });
 //     // };
-
 
 //     return (
 //       <storeContext.Provider
@@ -240,7 +236,6 @@
 //     });
 //   };
 
-
 //   const updateProduct = async (id, data) => {
 //     await axios.patch(`${localURL}/products/${id}`, data);
 //     dispatch({
@@ -272,7 +267,6 @@
 
 // //   );
 // // }
-
 
 import axios from "axios";
 import React, { useReducer } from "react";
@@ -337,11 +331,11 @@ export default function StoreContextProvider(props) {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
   const fetchProducts = async () => {
-    // const response = await axios.get(${URL}/api/v1/reviews/);
+    // const response = await axios.get(`${URL}/api/v1/reviews/`);
     // const products = response.data.results;
     const response = await axios.get(`${localURL}/products`);
     const products = response.data;
-    // console.log(response);
+    console.log(products);
 
     dispatch({
       type: "SET_PRODUCTS",
@@ -350,7 +344,7 @@ export default function StoreContextProvider(props) {
   };
 
   const fetchProductDetail = async (id) => {
-    // const response = await axios.get(${URL}/api/v1/review/${id});
+    // const response = await axios.get(`${URL}/api/v1/review/${id}`);
     const response = await axios.get(`${localURL}/products/${id}`);
     const productDetail = response.data;
 
@@ -359,8 +353,6 @@ export default function StoreContextProvider(props) {
       payload: productDetail,
     });
   };
-
-
 
   const fetchCategories = async () => {
     // const response = await axios.get(`${URL}/api/v1/categories/list/`);
@@ -374,10 +366,9 @@ export default function StoreContextProvider(props) {
     });
   };
 
-
   const createProduct = async (product) => {
-    const response = await axios.post(`${URL}/api/v1/reviews/, product`);
-    // const response = await axios.post(${localURL}/products, product);
+    // const response = await axios.post(`${URL}/api/v1/reviews/`, product);
+    const response = await axios.post(`${localURL}/products`, product);
     const createProduct = response.data;
 
     dispatch({

@@ -16,7 +16,7 @@ export default function ProductCreatePage() {
   const history = useHistory();
 
   const options = categories.map((category) => category);
-  console.log(options);
+  // console.log(options);
 
   const [value, setValue] = React.useState(null);
   const [inputValue, setInputValue] = React.useState("");
@@ -42,7 +42,6 @@ export default function ProductCreatePage() {
   const onSubmit = (values, actions) => {
     createProduct({
       ...values,
-      comments: [],
     }).then((id) => {
       actions.resetForm();
       notifySuccess("Продукт был создан!");
@@ -97,17 +96,17 @@ export default function ProductCreatePage() {
               <ErrorMessage component={TextError} name="review" />
 
               <label>Category</label>
-              {/* <Field
+              <Field
                 variant="outlined"
                 className={classes.input}
                 name="category"
                 as={TextField}
-              /> */}
+              />
 
-              <div className={classes.category}>
-                {/* <div>{`value: ${value !== null ? `'${value}'` : "null"}`}</div>
+              {/* <div className={classes.category}>
+                <div>{`value: ${value !== null ? `'${value}'` : "null"}`}</div>
                 <div>{`inputValue: '${inputValue}'`}</div>
-                <br /> */}
+                <br />
                 <Autocomplete
                   className={classes.autocomplete}
                   value={value}
@@ -131,7 +130,7 @@ export default function ProductCreatePage() {
                     />
                   )}
                 />
-              </div>
+              </div> */}
               <ErrorMessage component={TextError} name="category" />
 
               <label>Image</label>
