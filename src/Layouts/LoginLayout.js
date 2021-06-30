@@ -80,14 +80,14 @@ export default function MainLayout(props) {
       <main style={{ backgroundColor: "#0f0d19" }}>
         <Container>
           {props.children}
-          <Fab
+          {/* <Fab
             onClick={() => history.push("/products/create")}
             className={classes.addBtn}
             color="secondary"
             aria-label="add"
           >
             <AddIcon />
-          </Fab>
+          </Fab> */}
         </Container>
       </main>
     </React.Fragment>
