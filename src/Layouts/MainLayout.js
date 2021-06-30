@@ -130,6 +130,7 @@ import Footer from "../components/Footer/Footer";
 import FooterSocial from "../components/FooterSocial/FooterSocial";
 import { Fab } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
+import Logout from "../components/Auth/Logout/logout";
 import { useHistory } from "react-router";
 import { Link, NavLink } from "react-router-dom";
 
@@ -190,6 +191,7 @@ export default function MainLayout(props) {
                 <SearchModal />
                 <Link to="/login">
                   <AccountCircleOutlinedIcon className={classes.accountIcon} />
+                  <Logout />
                 </Link>
               </div>
             </div>
@@ -200,14 +202,18 @@ export default function MainLayout(props) {
       <main style={{ backgroundColor: "#0f0d19" }}>
         <Container>
           {props.children}
-          <Fab
+
+          {localStorage.getItem('access_token') ? <Fab
             onClick={() => history.push("/products/create")}
             className={classes.addBtn}
             color="secondary"
             aria-label="add"
+
           >
             <AddIcon />
-          </Fab>
+
+          </Fab> : null
+          }
         </Container>
       </main>
       <Footer />
