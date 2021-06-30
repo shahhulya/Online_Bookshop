@@ -10,7 +10,7 @@ export default function MainPage() {
 
   useEffect(() => {
     fetchProducts();
-    fetchProduct();
+    // fetchProduct();
   }, []);
 
   return (
