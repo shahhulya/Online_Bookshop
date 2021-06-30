@@ -55,13 +55,22 @@ export default function MainLayout(props) {
       <ElevationScroll {...props}>
         <AppBar style={{ backgroundColor: "#1f1b2e" }}>
           <Toolbar>
+
             <Typography className={classes.logo}>
+
               <MenuBar className={classes.burgerMenu} />
-              <MenuBookIcon className={classes.menuBookIcon} fontSize="large" />
+              <Link to="/">
+                <MenuBookIcon className={classes.menuBookIcon} fontSize="large" />
+              </Link>
             </Typography>
             <div className={classes.nav__content}>
               <div className={classes.top__menu}>
-                <Typography variant="h6">Главное</Typography>
+                <Link
+                  style={({ textDecoration: "none" }, { color: "white" })}
+                  to="/"
+                >
+                  <Typography variant="h6">Главное</Typography>
+                </Link>
                 <Typography variant="h6">Книги</Typography>
                 <Typography variant="h6">Авторы</Typography>
                 <Typography variant="h6">Жанры</Typography>

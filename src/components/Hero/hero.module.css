@@ -3,16 +3,20 @@
 } */
 .hero {
   display: flex;
-  max-width: 1500px;
+  /* max-width: 1500px; */
   align-items: center;
   font-family: "Benne", serif;
+  height: 400px;
+
+  /* position: absolute; */
 }
 .hero video {
-  /* width: 100%; */
-  /* max-height: 500px;
-  height: 70%; */
   max-width: 1500px;
-  width: 100%;
+  height: 400px;
+  width: 1236px;
+  object-fit: cover;
+  position: absolute;
+  /* z-index: -1; */
 }
 
 .hero div {
@@ -22,9 +26,11 @@
 .hero h1 {
   max-width: 890px;
   color: #fff;
-  font-weight: 300;
-  font-size: 30px;
+  margin-left: 100px;
+  font-size: 4 0px;
   text-align: center;
+  font-weight: lighter;
+  position: relative;
 }
 .hero h1:hover {
   color: rgb(31, 27, 46);

@@ -13,6 +13,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+
 // import AppBar from "@material-ui/core/AppBar";
 // import MenuBar from '../../MenuBar/index';
 
@@ -21,32 +22,74 @@ import Container from '@material-ui/core/Container';
 
 
 const useStyles = makeStyles((theme) => ({
+    // <<<<<<< HEAD
+    //     paper: {
+    //         marginTop: theme.spacing(8),
+    //         display: "flex",
+    //         flexDirection: "column",
+    //         alignItems: "center",
+    //     },
+    //     avatar: {
+    //         margin: theme.spacing(1),
+    //         backgroundColor: theme.palette.secondary.main,
+    //     },
+    //     form: {
+    //         width: "100%", // Fix IE 11 issue.
+    //         marginTop: theme.spacing(1),
+    //         color: "white",
+    //     },
+    //     submit: {
+    //         margin: theme.spacing(3, 0, 2),
+    //     },
+    // }));
+
+    // export default function SignIn() {
+    //     const history = useHistory();
+    //     const initialFormData = Object.freeze({
+    //         email: "",
+    //         password: "",
+    //     });
+    // =======
+
     paper: {
         marginTop: theme.spacing(8),
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        backgroundColor: "white",
+        height: "444px",
+        borderRadius: "20px",
+
     },
     avatar: {
         margin: theme.spacing(1),
         backgroundColor: theme.palette.secondary.main,
     },
     form: {
-        width: "100%", // Fix IE 11 issue.
+        width: "90%", // Fix IE 11 issue.
         marginTop: theme.spacing(1),
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
         color: "white",
+
+
     },
     submit: {
         margin: theme.spacing(3, 0, 2),
     },
 }));
 
-export default function SignIn() {
+
+export default function Login() {
+
     const history = useHistory();
     const initialFormData = Object.freeze({
         email: "",
         password: "",
     });
+
+
 
     const [formData, updateFormData] = useState(initialFormData);
 
@@ -93,7 +136,7 @@ export default function SignIn() {
             <div className={classes.paper}>
                 <Avatar className={classes.avatar}></Avatar>
                 <Typography style={{ color: "white" }} component="h1" variant="h5">
-                    Sign in
+                    Войти
                 </Typography>
                 <form className={classes.form} noValidate>
                     <TextField
@@ -103,7 +146,7 @@ export default function SignIn() {
                         required
                         fullWidth
                         id="email"
-                        label="Email Address"
+                        label="Email"
                         name="email"
                         autoComplete="email"
                         autoFocus
@@ -116,7 +159,7 @@ export default function SignIn() {
                         required
                         fullWidth
                         name="password"
-                        label="Password"
+                        label="Пароль"
                         type="password"
                         id="password"
                         autoComplete="current-password"
@@ -130,7 +173,7 @@ export default function SignIn() {
                                 color="primary"
                             />
                         }
-                        label="Remember me"
+                        label="Запомнить меня"
                     />
                     <Button
                         type="submit"
@@ -140,17 +183,17 @@ export default function SignIn() {
                         className={classes.submit}
                         onClick={handleSubmit}
                     >
-                        Sign In
+                        Войти
                     </Button>
                     <Grid container>
                         <Grid item xs>
                             <Link href="#" variant="body2">
-                                Forgot password?
+                                Восстановить пароль?
                             </Link>
                         </Grid>
                         <Grid item>
                             <Link href="/register" variant="body2">
-                                {"Don't have an account? Sign Up"}
+                                {"Регистрация"}
                             </Link>
                         </Grid>
                     </Grid>
@@ -160,6 +203,7 @@ export default function SignIn() {
     );
 
     return (
+
 
         <Container
             //   style={{ backgroundColor: "gray" }}
@@ -243,4 +287,36 @@ export default function SignIn() {
         </Container>
     );
 
+    // <<<<<<< HEAD
+    // =======
+    //             label="Remember me"
+    //           />
+    //           <Button
+    //             type="submit"
+    //             fullWidth
+    //             variant="contained"
+    //             color="primary"
+    //             className={classes.submit}
+    //             onClick={handleSubmit}
+    //           >
+    //             Sign In
+    //           </Button>
+    //           <Grid container>
+    //             <Grid item xs>
+    //               <Link href="#" variant="body2">
+    //                 Forgot password?
+    //               </Link>
+    //             </Grid>
+    //             <Grid item>
+    //               <Link href="/register" variant="body2">
+    //                 {"Don't have an account? Sign Up"}
+    //               </Link>
+    //             </Grid>
+    //           </Grid>
+    //         </form>
+    //       </div>
+    //     </Container>
+    //   );
+
+    // >>>>>>> 4f0fad3dcb3db06c649479ee0cce621b3c3a36fc
 }
