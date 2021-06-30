@@ -1,4 +1,3 @@
-
 import React, { useContext, useState } from "react";
 
 import { useParams } from "react-router";
@@ -24,13 +23,13 @@ export default function CategoryPage() {
 
         product.category.name == name ? <ProductsList products={filtred} /> : ""
 
-//         product.category.name == name ? (
-//           <ProductsList products={products} />
-//         ) : (
-//           ""
-//         )
+        //         product.category.name == name ? (
+        //           <ProductsList products={products} />
+        //         ) : (
+        //           ""
+        //         )
 
-//       )}
+      )}s
 
     </MainLayout>
   );

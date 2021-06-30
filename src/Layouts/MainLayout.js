@@ -191,7 +191,9 @@ export default function MainLayout(props) {
                 <SearchModal />
                 <Link to="/login">
                   <AccountCircleOutlinedIcon className={classes.accountIcon} />
-                  <Logout />
+                  {localStorage.getItem('access_token') ? <Logout />
+                    : null
+                  }
                 </Link>
               </div>
             </div>
