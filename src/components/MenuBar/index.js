@@ -19,7 +19,7 @@ import Collapse from "@material-ui/core/Collapse";
 import StarBorder from "@material-ui/icons/StarBorder";
 import { storeContext } from "../../Contexts/StoreContext";
 import { Link } from "react-router-dom";
-
+import classes from "../MenuBar/menuBar.module.css";
 const useStyles = makeStyles({
   list: {
     width: 250,
@@ -80,8 +80,13 @@ export default function MenuBar() {
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           {categories.map((category) => (
-            <Link to={`/category/${category.name}`}>
-              <ListItem key={category.name} button className={classes.nested}>
+
+            <Link
+              style={{ color: "black", textDecoration: "none" }}
+              to={`/category/${category.name}`}
+            >
+              <ListItem key={category.id} button className={classes.nested}>
+
                 <ListItemText primary={category.name}></ListItemText>
               </ListItem>
             </Link>

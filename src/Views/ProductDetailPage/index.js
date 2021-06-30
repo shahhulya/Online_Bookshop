@@ -63,8 +63,9 @@ export default function ProductDetailPage() {
             <h3>by {productDetail.book_author}</h3>
             <p>{productDetail.review}</p>
           </div>
-          {/* <CommentInput /> */}
-          {/* <CommentList /> */}
+
+          {/* <CommentInput />
+          <CommentList /> */}
         </>
       ) : (
         ""
