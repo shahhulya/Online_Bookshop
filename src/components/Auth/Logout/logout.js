@@ -5,14 +5,11 @@ import { useHistory } from "react-router-dom";
 export default function Logout() {
   const history = useHistory();
 
-  useEffect(() => {
-    const response = axiosInstance.post("user/logout/blacklist/", {
-      refresh_token: localStorage.getItem("refresh_token"),
-    });
+  const handleLogout = () => {
     localStorage.removeItem("access_token");
     localStorage.removeItem("refresh_token");
     axiosInstance.defaults.headers["Authorization"] = null;
     history.push("/login");
-  });
-  return <div>Logout</div>;
+  }
+  return <button onClick={handleLogout}>Logout</button>;
 }
