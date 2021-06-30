@@ -90,6 +90,7 @@ export default function StoreContextProvider(props) {
     });
   };
 
+
   const fetchCategories = async () => {
     // const response = await axios.get(`${URL}/api/v1/categories/list/`);
     const response = await axios.get(`${localURL}/categories`);
@@ -124,50 +125,50 @@ export default function StoreContextProvider(props) {
   //   });
   // };
 
-  const createProduct = async (product) => {
-    const response = await axios.post(`${URL}/api/v1/reviews/`, product);
-    // const response = await axios.post(`${localURL}/products`, product);
-    const createProduct = response.data;
 
-    dispatch({
-      type: "ADD_PRODUCT",
-      payload: createProduct,
-    });
+const createProduct = async (product) => {
+  const response = await axios.post(`${URL}/api/v1/reviews/`, product);
+  // const response = await axios.post(`${localURL}/products`, product);
+  const createProduct = response.data;
 
-    return createProduct.id;
-  };
+  dispatch({
+    type: "ADD_PRODUCT",
+    payload: createProduct,
+  });
 
-  const deleteProduct = async (id) => {
-    await axios.delete(`${localURL}/products/${id}`);
-    dispatch({
-      type: "REMOVE_PRODUCT",
-      payload: id,
-    });
-  };
+  return createProduct.id;
+};
 
-  const updateProduct = async (id, data) => {
-    await axios.patch(`${localURL}/products/${id}`, data);
-    dispatch({
-      type: "CLEAR_PRODUCT",
-    });
-  };
+const deleteProduct = async (id) => {
+  await axios.delete(`${localURL}/products/${id}`);
+  dispatch({
+    type: "REMOVE_PRODUCT",
+    payload: id,
+  });
+};
 
-  return (
-    <storeContext.Provider
-      value={{
-        products: state.products,
-        categories: state.categories,
-        productDetail: state.productDetail,
-        fetchProducts,
-        fetchProductDetail,
-        fetchCategories,
-        createProduct,
-        deleteProduct,
-        updateProduct,
-        fetchProduct,
-      }}
-    >
-      {props.children}
-    </storeContext.Provider>
-  );
-}
+const updateProduct = async (id, data) => {
+  await axios.patch(`${localURL}/products/${id}`, data);
+  dispatch({
+    type: "CLEAR_PRODUCT",
+  });
+};
+
+return (
+  <storeContext.Provider
+    value={{
+      products: state.products,
+      categories: state.categories,
+      productDetail: state.productDetail,
+      fetchProducts,
+      fetchProductDetail,
+      fetchCategories,
+      createProduct,
+      deleteProduct,
+      updateProduct,
+      fetchSearchProducts,
+    }}
+  >
+    {props.children}
+  </storeContext.Provider>
+);

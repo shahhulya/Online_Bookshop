@@ -16,8 +16,12 @@ export default function MainPage() {
   return (
     <MainLayout>
       {/* <HeroSlider /> */}
-      {/* <Hero /> */}
+      <Hero />
       <ItemsSlider products={products} />
+
+      <ItemsSlider products={products} />
+      <ItemsSlider products={products} />
+
     </MainLayout>
   );
 }
