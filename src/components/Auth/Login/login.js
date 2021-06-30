@@ -183,7 +183,7 @@ export default function Login() {
               </Link>
             </Grid>
             <Grid item>
-              <Link to="/register" variant="body2">
+              <Link href="/register" variant="body2">
                 {"Регистрация"}
               </Link>
             </Grid>
@@ -193,5 +193,5 @@ export default function Login() {
     </Container>
   );
 
-  
+
 }
