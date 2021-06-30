@@ -90,84 +90,85 @@ export default function StoreContextProvider(props) {
     });
   };
 
-  const fetchCategories = async () => {
-    // const response = await axios.get(`${URL}/api/v1/categories/list/`);
-    const response = await axios.get(`${localURL}/categories`);
-    const categories = response.data;
-    console.log(categories);
+  // const fetchCategories = async () => {
+  //   // const response = await axios.get(`${URL}/api/v1/categories/list/`);
+  //   const response = await axios.get(`${localURL}/categories`);
+  //   const categories = response.data;
+  //   console.log(categories);
 
-    dispatch({
-      type: "SET_CATEGORIES",
-      payload: categories,
-    });
-  };
+  //   dispatch({
+  //     type: "SET_CATEGORIES",
+  //     payload: categories,
+  //   });
+  // };
 
-  const fetchCategoryProducts = async (categoryId) => {
-    const response = await axios.get(`${URL}/products/?category=${categoryId}`);
-    const products = response.data;
+  // const fetchSearchProducts = async (value) => {
+  //   const response = await axios.get(`${URL}api/v1/reviews/?q=${value}`);
+  //   const products = response.data;
+  //   const total = response.headers["x-total-count"];
 
-    dispatch({
-      type: "SET_PRODUCTS",
-      payload: products,
-    });
-  };
+  //   dispatch({
+  //     type: "SET_PRODUCTS",
+  //     payload: {
+  //       data: products,
+  //       total,
+  //     },
+  //   });
+  // };
 
-  const fetchCategoryDetail = async (categoryId) => {
-    const response = await axios.get(
-      `${URL}/api/v1/categories/list/${categoryId}`
-    );
-    const category = response.data;
+  // const fetchCategoryProducts = async (categoryId) => {
+  //   const response = await axios.get(`${URL}/products/?category=${brandId}`);
+  //   const products = response.data;
 
-    dispatch({
-      type: "SET_CATEGORY_DETAIL",
-      payload: category,
-    });
-  };
-
-  const createProduct = async (product) => {
-    const response = await axios.post(`${URL}/api/v1/reviews/`, product);
-    // const response = await axios.post(`${localURL}/products`, product);
-    const createProduct = response.data;
-
-    dispatch({
-      type: "ADD_PRODUCT",
-      payload: createProduct,
-    });
-
-    return createProduct.id;
-  };
-
-  const deleteProduct = async (id) => {
-    await axios.delete(`${localURL}/products/${id}`);
-    dispatch({
-      type: "REMOVE_PRODUCT",
-      payload: id,
-    });
-  };
-
-  const updateProduct = async (id, data) => {
-    await axios.patch(`${localURL}/products/${id}`, data);
-    dispatch({
-      type: "CLEAR_PRODUCT",
-    });
-  };
-
-  return (
-    <storeContext.Provider
-      value={{
-        products: state.products,
-        categories: state.categories,
-        productDetail: state.productDetail,
-        fetchProducts,
-        fetchProductDetail,
-        fetchCategories,
-        createProduct,
-        deleteProduct,
-        updateProduct,
-        fetchProduct,
-      }}
-    >
-      {props.children}
-    </storeContext.Provider>
-  );
+  dispatch({
+    type: "SET_CATEGORY_DETAIL",
+    payload: category,
+  });
 }
+
+const createProduct = async (product) => {
+  const response = await axios.post(`${URL}/api/v1/reviews/`, product);
+  // const response = await axios.post(`${localURL}/products`, product);
+  const createProduct = response.data;
+
+  dispatch({
+    type: "ADD_PRODUCT",
+    payload: createProduct,
+  });
+
+  return createProduct.id;
+};
+
+const deleteProduct = async (id) => {
+  await axios.delete(`${localURL}/products/${id}`);
+  dispatch({
+    type: "REMOVE_PRODUCT",
+    payload: id,
+  });
+};
+
+const updateProduct = async (id, data) => {
+  await axios.patch(`${localURL}/products/${id}`, data);
+  dispatch({
+    type: "CLEAR_PRODUCT",
+  });
+};
+
+return (
+  <storeContext.Provider
+    value={{
+      products: state.products,
+      categories: state.categories,
+      productDetail: state.productDetail,
+      fetchProducts,
+      fetchProductDetail,
+      fetchCategories,
+      createProduct,
+      deleteProduct,
+      updateProduct,
+      fetchSearchProducts,
+    }}
+  >
+    {props.children}
+  </storeContext.Provider>
+);
