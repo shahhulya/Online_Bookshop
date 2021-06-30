@@ -30,7 +30,7 @@ export default function CategoryPage() {
 //           ""
 //         )
 
-//       )}
+      )}s
 
     </MainLayout>
   );
