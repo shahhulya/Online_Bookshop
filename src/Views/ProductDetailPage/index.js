@@ -2,7 +2,10 @@ import React from "react";
 import MainLayout from "../../Layouts/MainLayout";
 import classes from "./productDetailPage.module.css";
 import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
-import Comments from "../../components/Comments/Comments";
+import CommentInput from "../../components/Comments/CommentList";
+import CommentList from "../../components/Comments/CommentInput";
+import Box from "@material-ui/core/Box";
+import Grid from "@material-ui/core/Grid";
 
 export default function ProductDetailPage() {
   return (
@@ -59,7 +62,16 @@ export default function ProductDetailPage() {
           though, it’s a nuanced page-turner, as sharp as it is fun. A biting
           social satire–cum-thriller; dark, playful, and brimming with life.
         </p>
-        {/* <Comments /> */}
+        <Box p={2}>
+          <Grid container direction="column">
+            <Grid item>
+              <CommentInput />
+            </Grid>
+            <Grid item>
+              <CommentList />
+            </Grid>
+          </Grid>
+        </Box>
       </div>
     </MainLayout>
   );

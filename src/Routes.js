@@ -10,7 +10,8 @@ import MainPage from "./Views/MainPage.js";
 import ProductDetailPage from "./Views/ProductDetailPage/index.js";
 import ProductCreatePage from "./Views/ProductCreatePage/ProductCreatePage";
 import LogInPage from "./Views/LogInPage";
-import SearchResultPage from "./Views/SearchResultPage/SearchResultPage"
+import SearchResultPage from "./Views/SearchResultPage/SearchResultPage";
+import RegisterPage from "./Views/RegisterPage/index";
 
 export default function Routes() {
   return (
@@ -18,7 +19,7 @@ export default function Routes() {
       {/* <AuthProvider> */}
       <Switch>
         <Route exact path="/" component={MainPage} />
-        <Route path="/register" component={Register} exact />
+        <Route path="/register" component={RegisterPage} exact />
         <Route path="/login" component={LogInPage} exact />
         <Route path="/logout" component={Logout} exact />
         <Route exact path="/products/create" component={ProductCreatePage} />

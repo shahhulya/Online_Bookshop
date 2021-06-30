@@ -55,22 +55,18 @@ export default function MainLayout(props) {
       <ElevationScroll {...props}>
         <AppBar style={{ backgroundColor: "#1f1b2e" }}>
           <Toolbar>
-
             <Typography className={classes.logo}>
-
               <MenuBar className={classes.burgerMenu} />
               <Link to="/">
-                <MenuBookIcon className={classes.menuBookIcon} fontSize="large" />
+                <MenuBookIcon
+                  className={classes.menuBookIcon}
+                  fontSize="large"
+                />
               </Link>
             </Typography>
             <div className={classes.nav__content}>
               <div className={classes.top__menu}>
-
-                <Link
-                  style={({ textDecoration: "none" }, { color: "white" })}
-                  to="/"
-                >
-
+                <Link className={classes.link_main} to="/">
                   <Typography variant="h6">Главное</Typography>
                 </Link>
                 <Typography variant="h6">Книги</Typography>
@@ -97,7 +93,6 @@ export default function MainLayout(props) {
             className={classes.addBtn}
             color="secondary"
             aria-label="add"
-
           >
             <AddIcon />
           </Fab>
