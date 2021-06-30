@@ -19,7 +19,7 @@ import FooterSocial from "../components/FooterSocial/FooterSocial";
 import { Fab } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import { useHistory } from "react-router";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function ElevationScroll(props) {
   const { children, window } = props;

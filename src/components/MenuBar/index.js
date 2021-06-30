@@ -18,6 +18,7 @@ import ExpandMore from "@material-ui/icons/ExpandMore";
 import Collapse from "@material-ui/core/Collapse";
 import StarBorder from "@material-ui/icons/StarBorder";
 import { storeContext } from "../../Contexts/StoreContext";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   list: {
@@ -79,9 +80,11 @@ export default function MenuBar() {
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           {categories.map((category) => (
-            <ListItem key={category.id} button className={classes.nested}>
-              <ListItemText primary={category.name}></ListItemText>
-            </ListItem>
+            <Link to={`/category/${category.name}`}>
+              <ListItem key={category.id} button className={classes.nested}>
+                <ListItemText primary={category.name}></ListItemText>
+              </ListItem>
+            </Link>
           ))}
         </List>
       </Collapse>

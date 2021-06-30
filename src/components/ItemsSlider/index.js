@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { storeContext } from "../../Contexts/StoreContext";
 import Card from "../Card";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 export default function ItemsSlider({ products }) {
+  const { categories } = useContext(storeContext);
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1200 },
@@ -33,14 +35,20 @@ export default function ItemsSlider({ products }) {
     },
   };
 
-  return (
-    <Carousel
-      responsive={responsive}
-      // customRightArrow={<ArrowForwardIosIcon />}
-    >
-      {products.map((product) => (
-        <Card key={product.id} data={product} />
-      ))}
-    </Carousel>
-  );
+  return categories.map((category) => (
+    <>
+      <h2 style={{ color: "#fff", height: 20 }}>{category.name}</h2>
+      <Carousel responsive={responsive}>
+        {products.map((product) =>
+          product.category.name == category.name ? (
+            <Card key={product.id} data={product} />
+          ) : null
+        )}
+      </Carousel>
+    </>
+  ));
 }
+
+// (
+//   <Card key={product.id} data={product} />
+// ))}

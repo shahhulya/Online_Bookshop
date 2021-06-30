@@ -24,16 +24,6 @@
   font-size: 18px;
 }
 
-.form .category {
-  width: 100%;
-  padding: 15px;
-}
-
-.category .autocomplete {
-  /* display: none; */
-  width: 100% !important;
-}
-
 .form button {
   align-self: flex-end;
   margin: 35px 0 25px;
@@ -44,13 +34,19 @@
   font-weight: bold;
   font-size: 16px;
 }
+
 @media only screen and (max-width: 768px) {
   .form {
     padding: 15px;
   }
 }
 
-/* .form .categoryInput { */
-/* opacity: 0; */
-/* visibility: hidden; */
-/* } */
+.form .category {
+  width: 100%;
+  padding: 15px;
+}
+
+.category .autocomplete {
+  /* display: none; */
+  width: 100% !important;
+}
