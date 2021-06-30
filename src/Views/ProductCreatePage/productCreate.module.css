@@ -30,6 +30,7 @@
 }
 
 .category .autocomplete {
+  /* display: none; */
   width: 100% !important;
 }
 
@@ -48,3 +49,8 @@
     padding: 15px;
   }
 }
+
+/* .form .categoryInput { */
+/* opacity: 0; */
+/* visibility: hidden; */
+/* } */

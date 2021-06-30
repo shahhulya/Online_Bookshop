@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axiosInstance from "../../../ApiAuth";
 import { useHistory } from "react-router-dom";
 //MaterialUI
@@ -13,6 +13,8 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+// import AppBar from "@material-ui/core/AppBar";
+// import MenuBar from '../../MenuBar/index';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -39,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn() {
+export default function Login() {
   const history = useHistory();
   const initialFormData = Object.freeze({
     email: "",
@@ -73,7 +75,7 @@ export default function SignIn() {
           "JWT " + localStorage.getItem("access_token");
         history.push("/");
         //console.log(res);
-        //console.log(res.data);
+        console.log(res.data.email);
       });
   };
 
@@ -81,7 +83,7 @@ export default function SignIn() {
 
   return (
     <Container
-      //   style={{ backgroundColor: "#fff" }}
+      //   style={{ backgroundColor: "gray" }}
       component="main"
       maxWidth="xs"
     >
@@ -93,7 +95,7 @@ export default function SignIn() {
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
-            className={classes.input}
+            style={{ backgroundColor: "white" }}
             variant="outlined"
             margin="normal"
             required
@@ -106,7 +108,7 @@ export default function SignIn() {
             onChange={handleChange}
           />
           <TextField
-            className={classes.input}
+            style={{ backgroundColor: "white" }}
             variant="outlined"
             margin="normal"
             required

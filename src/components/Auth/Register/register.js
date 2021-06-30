@@ -68,6 +68,7 @@ export default function Register() {
         console.log(res.data);
       });
     const handleSubmit = (e) => {
+
       e.preventDefault();
       console.log(formData);
 
@@ -98,6 +99,7 @@ export default function Register() {
       //         history.push('/login');
       //         console.log(res);
       //         console.log(res.data);
+
     };
   };
 

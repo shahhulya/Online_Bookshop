@@ -7,6 +7,7 @@ import { useHistory, useParams } from "react-router";
 import { useEffect } from "react";
 import { notifySuccess } from "../../helpers/notifiers";
 import DeleteSweepIcon from "@material-ui/icons/DeleteSweep";
+import CreateIcon from "@material-ui/icons/Create";
 
 export default function ProductDetailPage() {
   const { productDetail, fetchProductDetail, deleteProduct } =
@@ -41,14 +42,14 @@ export default function ProductDetailPage() {
           </div>
           <div className={classes.actions}>
             <p>
-              <BookmarkBorderIcon className={classes.bookmark_icon} /> Избранное
+              <BookmarkBorderIcon className={classes.bookmark_icon} /> Favorite
             </p>
-            <p>
-              <DeleteSweepIcon
-                onClick={handleProductDelete}
-                className={classes.delete_icon}
-              />
-              Удалить
+            <p onClick={handleProductDelete}>
+              <DeleteSweepIcon className={classes.delete_icon} />
+              Delete
+            </p>
+            <p onClick={() => history.push(`/products/${id}/update`)}>
+              <CreateIcon /> Change
             </p>
           </div>
           <div className={classes.book_description}>

@@ -9,9 +9,13 @@ import AboutUsPage from "./Views/AboutUsPage/index.js";
 
 import MainPage from "./Views/MainPage.js";
 import ProductDetailPage from "./Views/ProductDetailPage/index.js";
-import ProductCreatePage from "./Views/ProductCreatePage/ProductCreatePage";
+
 import CategoryPage from "./Views/CategoryPage";
+
 import LogInPage from "./Views/LogInPage";
+import ItemsSlider from "./components/ItemsSlider";
+import ProductUpdatePage from "./Views/ProductUpdatePage";
+import ProductCreatePage from "./Views/ProductCreatePage";
 
 export default function Routes() {
   return (
@@ -24,9 +28,15 @@ export default function Routes() {
         <Route path="/logout" component={Logout} exact />
         <Route exact path="/products/create" component={ProductCreatePage} />
         <Route exact path="/products/:id" component={ProductDetailPage} />
-        <Route exact path="/category/:id" component={CategoryPage} />
+        <Route
+          path="/products/:id/update/"
+          component={ProductUpdatePage}
+          exact
+        />
+        <Route exact path="/category/:name" component={CategoryPage} />
         <Route exact path="/AboutUsPage" component={AboutUsPage} />
         <Route exact path="/AddressPage" component={AddressPage} />
+        <Route exact path="/pathlink#yourAnchorTag" component={ItemsSlider} />
       </Switch>
 
       {/* </AuthProvider> */}
