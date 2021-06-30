@@ -102,27 +102,27 @@ export default function StoreContextProvider(props) {
     });
   };
 
-  const fetchCategoryProducts = async (categoryId) => {
-    const response = await axios.get(`${URL}/products/?category=${categoryId}`);
-    const products = response.data;
+  // const fetchCategoryProducts = async (categoryId) => {
+  //   const response = await axios.get(`${URL}/products/?category=${categoryId}`);
+  //   const products = response.data;
 
-    dispatch({
-      type: "SET_PRODUCTS",
-      payload: products,
-    });
-  };
+  //   dispatch({
+  //     type: "SET_PRODUCTS",
+  //     payload: products,
+  //   });
+  // };
 
-  const fetchCategoryDetail = async (categoryId) => {
-    const response = await axios.get(
-      `${URL}/api/v1/categories/list/${categoryId}`
-    );
-    const category = response.data;
+  // const fetchCategoryDetail = async (categoryId) => {
+  //   const response = await axios.get(
+  //     `${URL}/api/v1/categories/list/${categoryId}`
+  //   );
+  //   const category = response.data;
 
-    dispatch({
-      type: "SET_CATEGORY_DETAIL",
-      payload: category,
-    });
-  };
+  //   dispatch({
+  //     type: "SET_CATEGORY_DETAIL",
+  //     payload: category,
+  //   });
+  // };
 
   const createProduct = async (product) => {
     const response = await axios.post(`${URL}/api/v1/reviews/`, product);

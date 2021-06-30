@@ -18,11 +18,6 @@
   },
   "categories": [
     {
-      "id": 1,
-      "name": "Romance",
-      "parent": null
-    },
-    {
       "id": 2,
       "name": "Саморазвитие",
       "parent": null
