@@ -20,6 +20,7 @@ import { Fab } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
+import Logout from "../components/Auth/Logout/logout";
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -82,6 +83,7 @@ export default function MainLayout(props) {
                 <SearchModal />
                 <Link to="/login">
                   <AccountCircleOutlinedIcon className={classes.accountIcon} />
+                  <Logout />
                 </Link>
               </div>
             </div>
@@ -92,15 +94,15 @@ export default function MainLayout(props) {
       <main style={{ backgroundColor: "#0f0d19" }}>
         <Container>
           {props.children}
-          <Fab
+          {localStorage.getItem('access_token') ? <Fab
             onClick={() => history.push("/products/create")}
             className={classes.addBtn}
             color="secondary"
             aria-label="add"
-
           >
             <AddIcon />
-          </Fab>
+          </Fab> : null
+          }
         </Container>
       </main>
       <Footer />

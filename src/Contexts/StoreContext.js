@@ -57,6 +57,42 @@ export default function StoreContextProvider(props) {
     });
   };
 
+
+
+
+
+  const fetchBrands = async () => {
+    const response = await axios.get(`${URL}/api/v1/categories/list/`);
+    const brands = response.data;
+    dispatch({
+      type: 'SET_BRANDS',
+      payload: brands,
+    });
+  };
+
+  const fetchBrandProducts = async (brandId) => {
+    const response = await axios.get(`${URL}/api/v1/categories/detail/${brandId}`);
+    const products = response.data;
+    console.log(response)
+    dispatch({
+      type: 'SET_PRODUCTS',
+      payload: {
+        data: products,
+      },
+    });
+  };
+
+  const fetchBrandDetail = async (brandId) => {
+    const response = await axios.get(`${URL}/api/v1/categories/${brandId}`);
+    const brand = response.data;
+
+    dispatch({
+      type: 'SET_BRAND_DETAIL',
+      payload: brand,
+    });
+  };
+
+
   const fetchSearchProducts = async (value) => {
     const response = await axios.get(`${URL}api/v1/reviews/?q=${value}`);
     const products = response.data;
@@ -98,7 +134,10 @@ export default function StoreContextProvider(props) {
       value={{
         products: state.products,
         categories: state.categories,
+        fetchBrandDetail,
+        fetchBrands,
         fetchProducts,
+        fetchBrandProducts,
         fetchCategories,
         fetchSearchProducts,
       }}

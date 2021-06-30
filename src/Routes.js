@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AddressPage from "./Views/AddressPage/index";
-import Register from "./components/Auth/Register/register.js";
+import RegisterPage from "./Views/RegisterPage";
 import Logout from "./components/Auth/Logout/logout.js";
 
 import AboutUsPage from "./Views/AboutUsPage/index.js";
@@ -18,7 +18,7 @@ export default function Routes() {
       {/* <AuthProvider> */}
       <Switch>
         <Route exact path="/" component={MainPage} />
-        <Route path="/register" component={Register} exact />
+        <Route path="/register" component={RegisterPage} exact />
         <Route path="/login" component={LogInPage} exact />
         <Route path="/logout" component={Logout} exact />
         <Route exact path="/products/create" component={ProductCreatePage} />
