@@ -19,7 +19,7 @@ export default function Hero() {
       <div>
         {/* <Link to="/pathLink#yourAnchorTag"> */}
         <a style={{ textDecoration: "none" }} href="#section1">
-          <h1>открой свою книгу</h1>
+          <h1>Открой свою книгу</h1>
         </a>
 
         {/* </Link> */}

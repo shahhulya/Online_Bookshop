@@ -1,4 +1,4 @@
-import React from "react";
+  import React from "react";
 import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -7,15 +7,13 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
-import classes from "./mainLayout.module.css";
+import classes from "../mainLayout.module.css";
 import MenuBookIcon from "@material-ui/icons/MenuBook";
-import SearchModal from "../components/SearchModal";
+import SearchModal from "../../components/SearchModal";
 import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
 import MenuRoundedIcon from "@material-ui/icons/MenuRounded";
-import MenuBar from "../components/MenuBar";
-import HeroSlider from "../components/HeroSlider";
-import Footer from "../components/Footer/Footer";
-import FooterSocial from "../components/FooterSocial/FooterSocial";
+import MenuBar from "../../components/MenuBar";
+import HeroSlider from "../../components/HeroSlider";
 import { Fab } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import { useHistory } from "react-router";
@@ -46,7 +44,7 @@ ElevationScroll.propTypes = {
   window: PropTypes.func,
 };
 
-export default function MainLayout(props) {
+export default function LoginLayout(props) {
   const history = useHistory();
 
   return (
@@ -66,7 +64,12 @@ export default function MainLayout(props) {
             </Typography>
             <div className={classes.nav__content}>
               <div className={classes.top__menu}>
-                <Typography variant="h6">Главное</Typography>
+                <Link
+                  style={({ textDecoration: "none" }, { color: "white" })}
+                  to="/"
+                >
+                  <Typography variant="h6">Главное</Typography>
+                </Link>
                 <Typography variant="h6">Книги</Typography>
                 <Typography variant="h6">Авторы</Typography>
                 <Typography variant="h6">Жанры</Typography>
@@ -85,14 +88,14 @@ export default function MainLayout(props) {
       <main style={{ backgroundColor: "#0f0d19" }}>
         <Container>
           {props.children}
-          <Fab
+          {/* <Fab
             onClick={() => history.push("/products/create")}
             className={classes.addBtn}
             color="secondary"
             aria-label="add"
           >
             <AddIcon />
-          </Fab>
+          </Fab> */}
         </Container>
       </main>
     </React.Fragment>

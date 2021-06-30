@@ -81,7 +81,7 @@ export default function MenuBar() {
         <List component="div" disablePadding>
           {categories.map((category) => (
             <Link to={`/category/${category.name}`}>
-              <ListItem key={category.id} button className={classes.nested}>
+              <ListItem key={category.name} button className={classes.nested}>
                 <ListItemText primary={category.name}></ListItemText>
               </ListItem>
             </Link>

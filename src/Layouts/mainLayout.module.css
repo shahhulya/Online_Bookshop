@@ -76,8 +76,7 @@
   color: #fff;
 }
 
-.addBtn {
-  position: fixed;
-  top: 50%;
-  right: 15;
+.link_main {
+  text-decoration: none;
+  color: white;
 }

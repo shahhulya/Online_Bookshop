@@ -13,6 +13,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+
 // import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
@@ -21,14 +22,21 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    backgroundColor: "white",
+    height: "500px",
+    borderRadius: "20px",
   },
   avatar: {
     margin: theme.spacing(1),
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
-    width: "100%", // Fix IE 11 issue.
+    width: "90%", // Fix IE 11 issue.
     marginTop: theme.spacing(3),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    color: "white",
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
@@ -43,6 +51,28 @@ export default function Register() {
     password: "",
     password2: "",
   });
+  // <<<<<<< HEAD
+  // =======
+  //   };
+  //   const handleSubmit = (e) => {
+  //     e.preventDefault();
+  //     console.log(formData);
+  //     axiosInstance
+  //       .post(`accounts/register/`, {
+  //         email: formData.email,
+  //         password: formData.password,
+  //         password2: formData.password2,
+  //       })
+  //       .then((res) => {
+  //         history.push("/login");
+  //         console.log(res);
+  //         console.log(res.data);
+  //       });
+  //     const handleSubmit = (e) => {
+
+  //       e.preventDefault();
+  //       console.log(formData);
+  // >>>>>>> 4f0fad3dcb3db06c649479ee0cce621b3c3a36fc
 
   const [formData, updateFormData] = useState(initialFormData);
 
@@ -68,6 +98,51 @@ export default function Register() {
         console.log(res.data);
       });
     const handleSubmit = (e) => {
+      e.preventDefault();
+      console.log(formData);
+      axiosInstance
+        .post(`accounts/register/`, {
+          email: formData.email,
+          password: formData.password,
+          password2: formData.password2,
+        })
+        .then((res) => {
+          history.push("/login/");
+          // console.log(res);
+          console.log(res.data);
+        });
+      // const handleSubmit = (e) => {
+      //     e.preventDefault();
+      //     console.log(formData);
+
+      // axios.post(`http://92.245.126.22/api/v1/accounts/register/`,
+      //     {
+      //         "email":
+      //             "kubatbek.evrazfit1111@gmail.com"
+      //         ,
+      //         "password":
+      //             "123456123"
+      //         ,
+      //         "password2":
+      //             "123456123"
+      //     })
+      // axiosInstance
+      //     .post(`accounts/register`, {
+      //         "email":
+      //             "kubatbek1990@mail.ru"
+      //         ,
+      //         "password":
+      //             "123456"
+      //         ,
+      //         "password2":
+      //             "123456"
+
+      //     })
+      //     .then((res) => {
+      //         history.push('/login');
+      //         console.log(res);
+      //         console.log(res.data);
+
       e.preventDefault();
       console.log(formData);
 
@@ -99,21 +174,23 @@ export default function Register() {
       //         console.log(res);
       //         console.log(res.data);
     };
+
+    //     })
+    //     .then((res) => {
+    //         history.push('/login');
+    //         console.log(res);
+    //         console.log(res.data);
   };
 
   const classes = useStyles();
 
   return (
-    <Container
-      component="main"
-      maxWidth="xs"
-      style={{ backgroundColor: "#fff" }}
-    >
+    <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}></Avatar>
         <Typography component="h1" variant="h5">
-          Sign up
+          Регистрация
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
@@ -123,7 +200,7 @@ export default function Register() {
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
+                label="Email"
                 name="email"
                 autoComplete="email"
                 onChange={handleChange}
@@ -147,7 +224,7 @@ export default function Register() {
                 required
                 fullWidth
                 name="password"
-                label="Password"
+                label="Пароль"
                 type="password"
                 id="password"
                 autoComplete="current-password"
@@ -160,19 +237,19 @@ export default function Register() {
                 required
                 fullWidth
                 name="password2"
-                label="Password2"
+                label="Потдвержение пароля"
                 type="password"
                 id="password2"
                 autoComplete="current-password"
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
-              />
-            </Grid>
+            {/* <Grid item xs={12}>
+                            <FormControlLabel
+                                control={<Checkbox value="allowExtraEmails" color="primary" />}
+                                label="I want to receive inspiration, marketing promotions and updates via email."
+                            />
+                        </Grid> */}
           </Grid>
           <Button
             type="submit"
@@ -182,12 +259,12 @@ export default function Register() {
             className={classes.submit}
             onClick={handleSubmit}
           >
-            Sign Up
+            Регистрация
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link href="#" variant="body2">
-                Already have an account? Sign in
+              <Link href="/login" variant="body2">
+                У вас есть аккаунт? Вход
               </Link>
             </Grid>
           </Grid>

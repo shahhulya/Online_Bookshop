@@ -6,13 +6,13 @@
   /* max-width: 1500px; */
   align-items: center;
   font-family: "Benne", serif;
-  height: 400px;
+  height: 300px;
 
   /* position: absolute; */
 }
 .hero video {
   max-width: 1500px;
-  height: 400px;
+  height: 300px;
   width: 1236px;
   object-fit: cover;
   position: absolute;
@@ -25,9 +25,14 @@
 }
 .hero h1 {
   max-width: 890px;
+  /* background-color: crimson; */
+  /* opacity: 0.6; */
+  padding: 6px;
+  border: solid 1px crimson;
+  border-radius: 4px;
   color: #fff;
   margin-left: 100px;
-  font-size: 4 0px;
+  font-size: 30px;
   text-align: center;
   font-weight: lighter;
   position: relative;

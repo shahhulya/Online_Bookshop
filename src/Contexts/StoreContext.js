@@ -60,18 +60,12 @@ const localURL = "http://localhost:8000";
 export default function StoreContextProvider(props) {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
-  const fetchProduct = async () => {
-    const response = await axios.get(`${URL}/api/v1/review/2`);
-    const product = response.data.category;
-    console.log(product);
-  };
-
   const fetchProducts = async () => {
     // const response = await axios.get(`${URL}/api/v1/reviews/`);
     // const products = response.data.results;
     const response = await axios.get(`${localURL}/products`);
     const products = response.data;
-    // console.log(response);
+    console.log(products);
 
     dispatch({
       type: "SET_PRODUCTS",
@@ -102,31 +96,9 @@ export default function StoreContextProvider(props) {
     });
   };
 
-  // const fetchCategoryProducts = async (categoryId) => {
-  //   const response = await axios.get(`${URL}/products/?category=${categoryId}`);
-  //   const products = response.data;
-
-  //   dispatch({
-  //     type: "SET_PRODUCTS",
-  //     payload: products,
-  //   });
-  // };
-
-  // const fetchCategoryDetail = async (categoryId) => {
-  //   const response = await axios.get(
-  //     `${URL}/api/v1/categories/list/${categoryId}`
-  //   );
-  //   const category = response.data;
-
-  //   dispatch({
-  //     type: "SET_CATEGORY_DETAIL",
-  //     payload: category,
-  //   });
-  // };
-
   const createProduct = async (product) => {
-    const response = await axios.post(`${URL}/api/v1/reviews/`, product);
-    // const response = await axios.post(`${localURL}/products`, product);
+    // const response = await axios.post(`${URL}/api/v1/reviews/`, product);
+    const response = await axios.post(`${localURL}/products`, product);
     const createProduct = response.data;
 
     dispatch({
@@ -151,7 +123,6 @@ export default function StoreContextProvider(props) {
       type: "CLEAR_PRODUCT",
     });
   };
-
   return (
     <storeContext.Provider
       value={{
@@ -164,7 +135,6 @@ export default function StoreContextProvider(props) {
         createProduct,
         deleteProduct,
         updateProduct,
-        fetchProduct,
       }}
     >
       {props.children}

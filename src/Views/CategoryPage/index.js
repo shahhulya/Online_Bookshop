@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import ProductsList from "../../components/productsList";
 import { storeContext } from "../../Contexts/StoreContext";
 import MainLayout from "../../Layouts/MainLayout";
+import classes from "./categoryPage.module.css";
 
 export default function CategoryPage() {
   const { name } = useParams();
@@ -18,11 +19,8 @@ export default function CategoryPage() {
 
   return (
     <MainLayout>
-      {products.map((product) =>
-        product.category.name == name ? <ProductsList products={filtred} /> : ""
-      )}
-
-      {/* <ProductsList products={products} /> */}
+      <h2 className={classes.categoryName}>{name}</h2>
+      <ProductsList products={filtred} />
     </MainLayout>
   );
 }
