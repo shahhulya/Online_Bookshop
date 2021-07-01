@@ -81,3 +81,12 @@
 .book_description p {
   font-size: 16px;
 }
+
+.comments {
+  color: #fff;
+}
+
+.comment {
+  display: flex;
+  flex-direction: row;
+}

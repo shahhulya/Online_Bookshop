@@ -18,146 +18,183 @@
   },
   "categories": [
     {
-      "id": 2,
-      "name": "Саморазвитие",
-      "parent": null
-    },
-    {
-      "id": 3,
-      "name": "Detective",
-      "parent": null
-    },
-    {
-      "id": 4,
-      "name": "Fantasy",
-      "parent": null
-    },
-    {
-      "id": 5,
-      "name": "Romance",
-      "parent": null
-    },
-    {
-      "id": 6,
-      "name": "Dystopia",
-      "parent": null
-    },
-    {
-      "id": 7,
-      "name": "Historical novel",
-      "parent": null
-    },
-    {
-      "id": 8,
-      "name": "Thriller & suspense",
-      "parent": null
-    }
+      "name": "Detective"
+  },
+  {
+      "name": "Fantasy"
+  },
+  {
+      "name": "Romance"
+  },
+  {
+      "name": "Dystopia"
+  },
+  {
+      "name": "Historical Novel"
+  },
+  {
+      "name": "Thriller"
+  },
+  {
+      "name": "Novel"
+  },
+  {
+      "name": "Self-development"
+  }
   ],
   "products": [
     {
-      "id": 2,
-      "title": "НЕ ТУПИ",
-      "book_author": "Джен Синсеро",
-      "review": "Эта книга – ваш личный тренер. Каждый день она будет поднимать боевой дух и заряжать на успех. Ее автор, знаменитая Джен Синсеро, призывает не сбавлять обороты на пути к успеху и ежедневно накачивать «мышцы крутости» в Духовном тренажерном зале. «Успех – это способ существования, постоянной адаптации и роста. Чем больше вы делаете для своего успеха, тем легче становится путь», – раздается боевой клич Синсеро.\r\n\r\n«НЕ ТУПИ» – это книга-тренинг с упражнениями и техниками для ежедневной работы над собой. С ее помощью вы повысите уровень энергии и сохраните осознанность и мотивацию даже в самые трудные времена.",
+      "id": 1,
+      "title": "Don't be stupid",
+      "book_author": "Jen Sincero",
+      "review": "The book \"Don't be stupid\" is your personal trainer. Every day it will raise morale and charge for success. Its author, the famous Jen Sinsero, urges not to slow down on the way to success and daily pump up the \"muscles of coolness\" in the Spiritual gym. \"Success is a way of existence, constant adaptation and growth. The more you do for your success, the easier becomes the way,\" hear the battle cry Sincere.\r\n\"Don't be stupid\" is a training book with exercises and techniques for daily work on yourself. With it, you will increase your energy levels and maintain awareness and motivation even in the most difficult times.",
       "owner": "admin@gmail.com",
       "category": {
-        "id": 2,
-        "name": "Саморазвитие",
-        "parent": null
+          "name": "Self-development"
       },
-      "preview": "Только тот, кто ежедневно работает над собой, живет жизнью мечты",
-      "image": "http://34.89.166.252/media/images/ne-tupi.jpg",
-      "comments": []
-    },
-    {
-      "id": 3,
+      "preview": "ONLY THOSE WHO WORK ON THEMSELVES DAILY LIVE THE LIFE OF THEIR DREAMS. GIFT BOOK BOUND IN LEATHER",
+      "image": "http://34.89.166.252/media/images/ne-tupi_DzQx8o7.jpg",
+      "comments": [],
+      "like": 0,
+      "mark": {
+          "mark__avg": null
+      }
+  },
+  {
+      "id": 2,
       "title": "Mrs.Sherlock Holmes",
       "book_author": "Arthur Conan Doyle",
-      "review": "The author of Super Boys: The Amazing Adventures of Jerry Siegel and Joe Shuster—The Creators of Superman (2013) returns with the astonishing story of the first female U.S. district attorney.\r\n\r\nRicca, an authority on comics and a SAGES fellow at Case Western Reserve University, crafts an express train of a story that follows the career of the woman born Mary Grace Winterton (1869-1948), who had two failed marriages, during which her surname became first Quackenbos and then Humiston (the name she bears through much of the text). Ricca’s focus is on her most spectacular case, that of young Ruth Cruger, a recent high school graduate who, in February 1917, disappeared after getting her ice skates sharpened at a neighborhood shop in Harlem. In the early sections of the book, the author artfully—even cinematically—shifts our attention, chapter by chapter, among the Cruger case and some of Humiston’s earlier cases, which required staggering amounts of travel and research and even danger for Humiston, who’d earned a law degree but would eventually segue into full-time investigations of the cases that obsessed her. She would also galvanize the newspaper-reading public, making her a celebrity and earning her the name in the book’s title. Many cases involved the disappearance and/or abuse of girls and women. Ricca had to rely heavily on newspaper and magazine accounts (there are 45 pages of endnotes) because all the official records of most of her cases were destroyed by accident or intent. Throughout—as he acknowledges near the end—the author breathes life into the narrative by imagining gestures, thoughts, attitudes, and ruminations for his characters. After some very high-profile successes, Humiston’s career began to crack when she went after the military near the end of World War I, and she died in virtual obscurity.",
+      "review": "The author of Super Boys: The Amazing Adventures of Jerry Siegel and Joe Shuster—The Creators of Superman (2013) returns with the astonishing story of the first female U.S. district attorney.\\r\\n\\r\\nRicca, an authority on comics and a SAGES fellow at Case Western Reserve University, crafts an express train of a story that follows the career of the woman born Mary Grace Winterton (1869-1948), who had two failed marriages, during which her surname became first Quackenbos and then Humiston (the name she bears through much of the text). Ricca’s focus is on her most spectacular case, that of young Ruth Cruger, a recent high school graduate who, in February 1917, disappeared after getting her ice skates sharpened at a neighborhood shop in Harlem. In the early sections of the book, the author artfully—even cinematically—shifts our attention, chapter by chapter, among the Cruger case and some of Humiston’s earlier cases, which required staggering amounts of travel and research and even danger for Humiston, who’d earned a law degree but would eventually segue into full-time investigations of the cases that obsessed her. She would also galvanize the newspaper-reading public, making her a celebrity and earning her the name in the book’s title. Many cases involved the disappearance and/or abuse of girls and women. Ricca had to rely heavily on newspaper and magazine accounts (there are 45 pages of endnotes) because all the official records of most of her cases were destroyed by accident or intent. Throughout—as he acknowledges near the end—the author breathes life into the narrative by imagining gestures, thoughts, attitudes, and ruminations for his characters. After some very high-profile successes, Humiston’s career began to crack when she went after the military near the end of World War I, and she died in virtual obscurity.",
       "owner": "admin@gmail.com",
       "category": {
-        "id": 3,
-        "name": "Detective",
-        "parent": null
+          "name": "Detective"
       },
       "preview": "Rapid, compelling storytelling informed by rigorous research and enlivened by fecund imagination.",
-      "image": "http://34.89.166.252/media/images/9781250072245.jpg",
-      "comments": []
-    },
-    {
-      "id": 4,
+      "image": "http://34.89.166.252/media/images/9781250072245_HjcjABB.jpg",
+      "comments": [],
+      "like": 0,
+      "mark": {
+          "mark__avg": null
+      }
+  },
+  {
+      "id": 3,
       "title": "Harry Potter",
       "book_author": "J.K. Rowling",
-      "review": "n a rousing first novel, already an award-winner in England, Harry is just a baby when his magical parents are done in by Voldemort, a wizard so dastardly other wizards are scared to mention his name.\r\n\r\nSo Harry is brought up by his mean Uncle Vernon and Aunt Petunia Dursley, and picked on by his horrid cousin Dudley. He knows nothing about his magical birthright until ten years later, when he learns he’s to attend Hogwarts School of Witchcraft and Wizardry. Hogwarts is a lot like English boarding school, except that instead of classes in math and grammar, the curriculum features courses in Transfiguration, Herbology, and Defense Against the Dark Arts. Harry becomes the star player of Quidditch, a sort of mid-air ball game. With the help of his new friends Ron and Hermione, Harry solves a mystery involving a sorcerer’s stone that ultimately takes him to the evil Voldemort. This hugely enjoyable fantasy is filled with imaginative details, from oddly flavored jelly beans to dragons’ eggs hatched on the hearth.\r\n\r\nIt’s slanted toward action-oriented readers, who will find that Briticisms meld with all the other wonders of magic school. (Fiction. 10-14)",
-      "owner": "admin@gmail.com",
+      "review": "n a rousing first novel, already an award-winner in England, Harry is just a baby when his magical parents are done in by Voldemort, a wizard so dastardly other wizards are scared to mention his name.\\r\\n\\r\\nSo Harry is brought up by his mean Uncle Vernon and Aunt Petunia Dursley, and picked on by his horrid cousin Dudley. He knows nothing about his magical birthright until ten years later, when he learns he’s to attend Hogwarts School of Witchcraft and Wizardry. Hogwarts is a lot like English boarding school, except that instead of classes in math and grammar, the curriculum features courses in Transfiguration, Herbology, and Defense Against the Dark Arts. Harry becomes the star player of Quidditch, a sort of mid-air ball game. With the help of his new friends Ron and Hermione, Harry solves a mystery involving a sorcerer’s stone that ultimately takes him to the evil Voldemort. This hugely enjoyable fantasy is filled with imaginative details, from oddly flavored jelly beans to dragons’ eggs hatched on the hearth.\\r\\n\\r\\nIt’s slanted toward action-oriented readers, who will find that Briticisms meld with all the other wonders of magic school. (Fiction. 10-14)",
+      "owner": "kg.balashka2002@gmail.com",
       "category": {
-        "id": 4,
-        "name": "Fantasy",
-        "parent": null
+          "name": "Fantasy"
       },
       "preview": "It’s slanted toward action-oriented readers, who will find that Briticisms meld with all the other wonders of magic school.",
-      "image": "http://34.89.166.252/media/images/harry_potter.jpg",
-      "comments": []
-    },
-    {
-      "id": 5,
+      "image": "http://34.89.166.252/media/images/harry_potter_6Vm4BK5.jpg",
+      "comments": [],
+      "like": 0,
+      "mark": {
+          "mark__avg": null
+      }
+  },
+  {
+      "id": 4,
       "title": "Origin",
       "book_author": "Dan Brown",
-      "review": "Another Brown (Inferno, 2013, etc.) blockbuster, blending arcana, religion, and skulduggery—sound familiar?—with the latest headlines.\r\n\r\nYou just have to know that when the first character you meet in a Brown novel is a debonair tech mogul and the second a bony-fingered old bishop, you’ll end up with a clash of ideologies and worldviews. So it is. Edmond Kirsch, once a student of longtime Brown hero Robert Langdon, the Harvard symbologist–turned–action hero, has assembled a massive crowd, virtual and real, in Bilbao to announce he’s discovered something that’s destined to kill off religion and replace it with science. It would be ungallant to reveal just what the discovery is, but suffice it to say that the religious leaders of the world are in a tizzy about it, whereupon one shadowy Knights of Malta type takes it upon himself to put a bloody end to Kirsch’s nascent heresy. Ah, but what if Kirsch had concocted an AI agent so powerful that his own death was just an inconvenience? What if it was time for not just schism, but singularity? Digging into the mystery, Langdon finds a couple of new pals, one of them that computer avatar, and a whole pack of new enemies, who, not content just to keep Kirsch’s discovery under wraps, also frown on the thought that a great many people in the modern world, including some extremely prominent Spaniards, find fascism and Falangism passé and think the reigning liberal pope is a pretty good guy. Yes, Franco is still dead, as are Christopher Hitchens, Julian Jaynes, Jacques Derrida, William Blake, and other cultural figures Brown enlists along the way—and that’s just the beginning of the body count. The old ham-fisted Brown is here in full glory (“In that instant, Langdon realized that perhaps there was a macabre silver lining to Edmond’s horrific murder”; “The vivacious, strong-minded beauty had turned Julián’s world upside down”)—but, for all his defects as a stylist, it can’t be denied that he knows how to spin a yarn, and most satisfyingly.\r\n\r\nThe plot is absurd, of course, but the book is a definitive pleasure. Prepare to be absorbed—and in more ways than one.",
-      "owner": "admin@gmail.com",
+      "review": "Another Brown (Inferno, 2013, etc.) blockbuster, blending arcana, religion, and skulduggery—sound familiar?—with the latest headlines.\\r\\n\\r\\nYou just have to know that when the first character you meet in a Brown novel is a debonair tech mogul and the second a bony-fingered old bishop, you’ll end up with a clash of ideologies and worldviews. So it is. Edmond Kirsch, once a student of longtime Brown hero Robert Langdon, the Harvard symbologist–turned–action hero, has assembled a massive crowd, virtual and real, in Bilbao to announce he’s discovered something that’s destined to kill off religion and replace it with science. It would be ungallant to reveal just what the discovery is, but suffice it to say that the religious leaders of the world are in a tizzy about it, whereupon one shadowy Knights of Malta type takes it upon himself to put a bloody end to Kirsch’s nascent heresy. Ah, but what if Kirsch had concocted an AI agent so powerful that his own death was just an inconvenience? What if it was time for not just schism, but singularity? Digging into the mystery, Langdon finds a couple of new pals, one of them that computer avatar, and a whole pack of new enemies, who, not content just to keep Kirsch’s discovery under wraps, also frown on the thought that a great many people in the modern world, including some extremely prominent Spaniards, find fascism and Falangism passé and think the reigning liberal pope is a pretty good guy. Yes, Franco is still dead, as are Christopher Hitchens, Julian Jaynes, Jacques Derrida, William Blake, and other cultural figures Brown enlists along the way—and that’s just the beginning of the body count. The old ham-fisted Brown is here in full glory (“In that instant, Langdon realized that perhaps there was a macabre silver lining to Edmond’s horrific murder”; “The vivacious, strong-minded beauty had turned Julián’s world upside down”)—but, for all his defects as a stylist, it can’t be denied that he knows how to spin a yarn, and most satisfyingly.\\r\\n\\r\\nThe plot is absurd, of course, but the book is a definitive pleasure. Prepare to be absorbed—and in more ways than one.",
+      "owner": "kg.balashka2002@gmail.com",
       "category": {
-        "id": 5,
-        "name": "Romance",
-        "parent": null
+          "name": "Romance"
       },
       "preview": "The plot is absurd, of course, but the book is a definitive pleasure. Prepare to be absorbed—and in more ways than one.",
-      "image": "http://34.89.166.252/media/images/Origin.jpg",
-      "comments": []
-    },
-    {
-      "id": 6,
+      "image": "http://34.89.166.252/media/images/Origin_P7tHiHN.jpg",
+      "comments": [],
+      "like": 0,
+      "mark": {
+          "mark__avg": null
+      }
+  },
+  {
+      "id": 5,
       "title": "Fahrenheit 451",
-      "book_author": "Ray Bradbury",
+      "book_author": "The novel presents a future American society",
       "review": "Parents need to know that Fahrenheit 451 is a classic example of dystopian fiction, written by one of the most acclaimed authors of American science fiction and fantasy. It depicts a near-future America where books are prohibited and the populace is placated with cheap, shallow entertainment. Ironically, the novel's inclusion in schools and libraries is frequently opposed by various special-interest groups. There is some violence -- the main character deliberately burns one of his colleagues to death, one woman sets herself on fire and burns to death, another attempts suicide with pills, a mechanical hound goes after one man and kills another.",
-      "owner": "admin@gmail.com",
+      "owner": "kg.balashka2002@gmail.com",
       "category": {
-        "id": 6,
-        "name": "Dystopia",
-        "parent": null
+          "name": "Dystopia"
       },
       "preview": "The novel presents a future American society",
-      "image": "http://34.89.166.252/media/images/Ray_Bradbury__Fahrenheit_451.jpeg",
-      "comments": []
-    },
-    {
-      "id": 7,
+      "image": "http://34.89.166.252/media/images/Ray_Bradbury__Fahrenheit_451_65ev68L.jpeg",
+      "comments": [],
+      "like": 0,
+      "mark": {
+          "mark__avg": null
+      }
+  },
+  {
+      "id": 6,
       "title": "The man who laughs",
       "book_author": "Victor Hugo",
-      "review": "The most chilling lines in Paul Leni’s wonderful silent film The Man Who Laughs (1928) are spoken by a clown to his colleague Gwynplaine, the man of the title, whose smile was carved on to his face by gypsies when he was a child, freezing him into a caricature of merriment. ‘What a lucky clown you are – you don’t have to rub off your laugh.’ But Gwynplaine would give anything to wipe the smile off his own face, to show the world his sadness, and to make himself worthy of the beautiful Dea (who, being blind, has no idea how grotesque he looks).\r\nAlthough Victor Hugo’s L’Homme qui rit (1869) was not one of his more successful novels, it has had a rich afterlife in adaptations for theatre, film and television, and as the source of a number of comic books – most recently a graphic novel, published in 2013, by the writer David Hine and the artist Mark Stafford. It is through comic books that it has made its most obvious mark on popular culture: Conrad Veidt’s rictus in Leni’s film inspired Bob Kane when he created the Joker as an adversary for Batman. Leni’s version was originally meant to have been directed by Raymond Bernard; it was intended as a vehicle for Lon Chaney, the ‘Man of a Thousand Faces’, and would have formed a trilogy, of sorts, with his starring roles as deformed heroes in The Hunchback of Notre Dame (1923) and The Phantom of the Opera (1925). But both men withdrew from the project; instead, Universal hired Leni – whose Waxworks (1924) is regarded as one of the masterpieces of German expressionism – along with Veidt, who had starred in that film. It’s hard to see them as second best.",
-      "owner": "admin@gmail.com",
+      "review": "The most chilling lines in Paul Leni’s wonderful silent film The Man Who Laughs (1928) are spoken by a clown to his colleague Gwynplaine, the man of the title, whose smile was carved on to his face by gypsies when he was a child, freezing him into a caricature of merriment. ‘What a lucky clown you are – you don’t have to rub off your laugh.’ But Gwynplaine would give anything to wipe the smile off his own face, to show the world his sadness, and to make himself worthy of the beautiful Dea (who, being blind, has no idea how grotesque he looks).\\r\\nAlthough Victor Hugo’s L’Homme qui rit (1869) was not one of his more successful novels, it has had a rich afterlife in adaptations for theatre, film and television, and as the source of a number of comic books – most recently a graphic novel, published in 2013, by the writer David Hine and the artist Mark Stafford. It is through comic books that it has made its most obvious mark on popular culture: Conrad Veidt’s rictus in Leni’s film inspired Bob Kane when he created the Joker as an adversary for Batman. Leni’s version was originally meant to have been directed by Raymond Bernard; it was intended as a vehicle for Lon Chaney, the ‘Man of a Thousand Faces’, and would have formed a trilogy, of sorts, with his starring roles as deformed heroes in The Hunchback of Notre Dame (1923) and The Phantom of the Opera (1925). But both men withdrew from the project; instead, Universal hired Leni – whose Waxworks (1924) is regarded as one of the masterpieces of German expressionism – along with Veidt, who had starred in that film. It’s hard to see them as second best.",
+      "owner": "kg.balashka2002@gmail.com",
       "category": {
-        "id": 7,
-        "name": "Historical novel",
-        "parent": null
+          "name": "Historical Novel"
       },
       "preview": "This story, set in 17th century England, was written by Victor Hugo",
-      "image": "http://34.89.166.252/media/images/Victor.jpg",
-      "comments": []
-    },
-    {
-      "id": 8,
+      "image": "http://34.89.166.252/media/images/Victor_AYbgO1f.jpg",
+      "comments": [],
+      "like": 0,
+      "mark": {
+          "mark__avg": null
+      }
+  },
+  {
+      "id": 7,
       "title": "One by one",
       "book_author": "Ruth Ware",
-      "review": "Our contemporary Agatha Christie offers up her version of And Then There Were None when 11 people are stranded in a ritzy ski chalet and begin dying one by one.\r\n\r\nBy the numbers, the streaming app Snoop is devastatingly successful, and the company is on the cusp of a major buyout—if the shareholders vote to take this route. The founders, Topher and Eva, are torn, and the other three shareholders are being courted to choose sides. Most of the pressure falls on Liz, an awkward outlier when compared with the glamorous, beautiful people who head up the company. Though she doesn't work directly for Snoop anymore, Liz is included in the leadership retreat: It's her and eight other board members at a lush, remote French ski chalet for a little powder, a little pampering, and a little back-channel business. Erin and Danny, the caretakers of the chalet, notice tension among the members of the Snoop group from the beginning, but overall it seems like just another wealthy, entitled corporate gathering. The weather on top of the mountain grows increasingly dangerous, and when nine people go out to ski and only eight return, fear and suspicion begin to grow. Then there's an avalanche, and the chalet is cut off from contact with the outside world. Soon, another group member dies, apparently poisoned, and then another is murdered because of something she saw. The survivors must split up to search for help before there's no one left. Alternating chapters between Liz's and Erin’s points of view, Ware does what she does best: Gives us a familiar locked-door mystery setup and lets the tension and suspicion marinate until they reach fever pitch. Another win for Ware and her adaptations of classic mystery traditions.\r\n\r\nThe solution is maddeningly simple but the construction, simply masterful.",
-      "owner": "admin@gmail.com",
+      "review": "Our contemporary Agatha Christie offers up her version of And Then There Were None when 11 people are stranded in a ritzy ski chalet and begin dying one by one.\\r\\n\\r\\nBy the numbers, the streaming app Snoop is devastatingly successful, and the company is on the cusp of a major buyout—if the shareholders vote to take this route. The founders, Topher and Eva, are torn, and the other three shareholders are being courted to choose sides. Most of the pressure falls on Liz, an awkward outlier when compared with the glamorous, beautiful people who head up the company. Though she doesn't work directly for Snoop anymore, Liz is included in the leadership retreat: It's her and eight other board members at a lush, remote French ski chalet for a little powder, a little pampering, and a little back-channel business. Erin and Danny, the caretakers of the chalet, notice tension among the members of the Snoop group from the beginning, but overall it seems like just another wealthy, entitled corporate gathering. The weather on top of the mountain grows increasingly dangerous, and when nine people go out to ski and only eight return, fear and suspicion begin to grow. Then there's an avalanche, and the chalet is cut off from contact with the outside world. Soon, another group member dies, apparently poisoned, and then another is murdered because of something she saw. The survivors must split up to search for help before there's no one left. Alternating chapters between Liz's and Erin’s points of view, Ware does what she does best: Gives us a familiar locked-door mystery setup and lets the tension and suspicion marinate until they reach fever pitch. Another win for Ware and her adaptations of classic mystery traditions.\\r\\n\\r\\nThe solution is maddeningly simple but the construction, simply masterful.",
+      "owner": "kg.balashka2002@gmail.com",
       "category": {
-        "id": 8,
-        "name": "Thriller & suspense",
-        "parent": null
+          "name": "Thriller"
       },
       "preview": "The solution is maddeningly simple but the construction, simply masterful.",
-      "image": "http://34.89.166.252/media/images/ONEBYONE.jpg",
-      "comments": []
+      "image": "http://34.89.166.252/media/images/ONEBYONE_tWmokTX.jpg",
+      "comments": [],
+      "like": 0,
+      "mark": {
+          "mark__avg": null
+      }
+  },
+  {
+      "id": 8,
+      "title": "Adventure",
+      "book_author": null,
+      "review": "John snow is the best charachter!!",
+      "owner": "admin@gmail.com",
+      "category": {
+          "name": "Romance"
+      },
+      "preview": "John SNow",
+      "image": "http://34.89.166.252/media/images/kungey.jpg",
+      "comments": [],
+      "like": 0,
+      "mark": {
+          "mark__avg": null
+      }
+  },
+  {
+    "id": 9,
+    "title": "Game of thrones",
+    "book_author": null,
+    "review": "John snow is the best charachter!!",
+    "owner": "johnsnowtest73@gmail.com",
+    "category": {
+        "name": "Novel"
+    },
+    "preview": "John SNow",
+    "image": "http://34.89.166.252/media/images/kungey_VtjJcBs.jpg",
+    "comments": [],
+    "like": 0,
+    "mark": {
+        "mark__avg": null
     }
+}
   ]
 }

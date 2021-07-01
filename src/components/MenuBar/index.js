@@ -80,11 +80,13 @@ export default function MenuBar() {
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           {categories.map((category) => (
+
             <Link
               style={{ color: "black", textDecoration: "none" }}
               to={`/category/${category.name}`}
             >
               <ListItem key={category.id} button className={classes.nested}>
+
                 <ListItemText primary={category.name}></ListItemText>
               </ListItem>
             </Link>

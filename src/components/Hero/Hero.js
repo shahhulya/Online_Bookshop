@@ -25,7 +25,7 @@ export default function Hero() {
         {/* </Link> */}
 
         <ScrollableAnchor id={"section1"}>
-          <div>ssmewhrfvck.u,akbcfkjbcsjae</div>
+          <div></div>
         </ScrollableAnchor>
       </div>
     </div>

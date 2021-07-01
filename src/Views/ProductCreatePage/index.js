@@ -16,7 +16,7 @@ export default function ProductCreatePage() {
   const history = useHistory();
 
   const options = categories.map((category) => category);
-  console.log(options);
+  // console.log(options);
 
   const [value, setValue] = React.useState(null);
   const [inputValue, setInputValue] = React.useState("");
@@ -40,10 +40,17 @@ export default function ProductCreatePage() {
   });
 
   const onSubmit = (values, actions) => {
-    createProduct({
-      ...values,
-      comments: [],
-    }).then((id) => {
+    // console.log(values);
+    let formData = new FormData();
+    formData.append("title", values.title);
+    formData.append("book_author", values.book_author);
+    formData.append("preview", values.preview);
+    formData.append("review", values.review);
+    formData.append("category", values.category);
+    formData.append("image", values.image);
+    console.log(formData);
+
+    createProduct(formData).then((id) => {
       actions.resetForm();
       notifySuccess("Продукт был создан!");
       history.push(`/products/${id}`);
@@ -58,7 +65,7 @@ export default function ProductCreatePage() {
           validationSchema={validationSchema}
           onSubmit={onSubmit}
         >
-          {({ values }) => (
+          {({ values, setFieldValue }) => (
             <Form className={classes.form}>
               <Typography variant="h4">Создание продукта</Typography>
               <label>Title</label>
@@ -97,48 +104,21 @@ export default function ProductCreatePage() {
               <ErrorMessage component={TextError} name="review" />
 
               <label>Category</label>
-              {/* <Field
+              <Field
                 variant="outlined"
                 className={classes.input}
                 name="category"
                 as={TextField}
-              /> */}
-
-              <div className={classes.category}>
-                {/* <div>{`value: ${value !== null ? `'${value}'` : "null"}`}</div>
-                <div>{`inputValue: '${inputValue}'`}</div>
-                <br /> */}
-                <Autocomplete
-                  className={classes.autocomplete}
-                  value={value}
-                  onChange={(event, newValue) => {
-                    setValue(newValue);
-                  }}
-                  inputValue={inputValue}
-                  onInputChange={(event, newInputValue) => {
-                    setInputValue(newInputValue);
-                  }}
-                  id="controllable-states-demo"
-                  options={options.map((category) => category.name)}
-                  style={{ width: 300 }}
-                  renderInput={(params) => (
-                    <Field
-                      {...params}
-                      name="category"
-                      as={TextField}
-                      // label="Controllable"
-                      variant="outlined"
-                    />
-                  )}
-                />
-              </div>
+              />
               <ErrorMessage component={TextError} name="category" />
 
               <label>Image</label>
-              <Field
+              <input
                 className={classes.input}
                 name="image"
+                type="file"
                 variant="outlined"
+                onChange={(e) => setFieldValue("image", e.target.files[0])}
                 as={TextField}
               />
               <ErrorMessage component={TextError} name="image" />
