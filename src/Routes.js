@@ -1,17 +1,15 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 26dab25b1c9945571e2f10201516cb366a3b5a59
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AddressPage from "./Views/AddressPage/index";
-import Register from "./components/Auth/Register/register";
-import Login from "./components/Auth/Login/login";
 import Logout from "./components/Auth/Logout/logout";
-// import AboutUs from "./components/AboutUs/AboutUs.js";
 import AboutUsPage from "./Views/AboutUsPage/index.js";
-
 import MainPage from "./Views/MainPage.js";
 import ProductDetailPage from "./Views/ProductDetailPage/index.js";
-
 import CategoryPage from "./Views/CategoryPage";
-
 import LogInPage from "./Views/LogInPage";
 import ItemsSlider from "./components/ItemsSlider";
 import ProductUpdatePage from "./Views/ProductUpdatePage";
@@ -24,7 +22,6 @@ import AccountPage from "./Views/AccountPage";
 export default function Routes() {
   return (
     <Router>
-      {/* <AuthProvider> */}
       <Switch>
         <Route exact path="/" component={MainPage} />
         <Route exact path="/account" component={AccountPage} />

@@ -119,7 +119,14 @@ export default function MainLayout(props) {
                 )}
 
                 <Link to="/login">
+<<<<<<< HEAD
                   <Logout />
+=======
+                  <AccountCircleOutlinedIcon className={classes.accountIcon} />
+                  {localStorage.getItem('access_token') ? <Logout />
+                    : null
+                  }
+>>>>>>> 26dab25b1c9945571e2f10201516cb366a3b5a59
                 </Link>
               </div>
             </div>

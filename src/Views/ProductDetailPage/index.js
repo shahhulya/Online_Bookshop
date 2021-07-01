@@ -81,6 +81,7 @@ export default function ProductDetailPage() {
             <p>{productDetail.review}</p>
           </div>
 
+<<<<<<< HEAD
           <form onSubmit={handleCommentAdd}>
             <div className={classes.comments}>
               {productDetail.comments.map((comment) => (
@@ -98,6 +99,10 @@ export default function ProductDetailPage() {
             />
             <button>create</button>
           </form>
+=======
+          {/* <CommentInput />
+          <CommentList /> */}
+>>>>>>> 26dab25b1c9945571e2f10201516cb366a3b5a59
         </>
       ) : (
         ""
