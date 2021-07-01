@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 26dab25b1c9945571e2f10201516cb366a3b5a59
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AddressPage from "./Views/AddressPage/index";
