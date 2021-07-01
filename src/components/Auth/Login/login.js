@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import axiosInstance from "../../../ApiAuth";
+import axiosInstance from "../../../API/ApiAuth";
 import { useHistory } from "react-router-dom";
 //MaterialUI
 import Avatar from "@material-ui/core/Avatar";
@@ -14,8 +14,6 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 
-// import AppBar from "@material-ui/core/AppBar";
-// import MenuBar from '../../MenuBar/index';
 
 const useStyles = makeStyles((theme) => ({
   //     paper: {

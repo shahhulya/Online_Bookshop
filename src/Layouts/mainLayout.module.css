@@ -77,6 +77,17 @@
   color: #fff;
 }
 
+.accountExitIcon {
+  margin-left: 15px;
+  color: #63606d;
+  cursor: pointer;
+  transition: color 0.4s;
+}
+
+.accountExitIcon:hover {
+  color: #fff;
+}
+
 .addBtn {
   position: fixed;
   top: 50%;

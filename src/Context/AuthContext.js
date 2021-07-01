@@ -1,77 +1,62 @@
-// import axios from "axios";
-// const baseUrl = 'http://34.89.166.252/api/';
+import React, { useContext, useState, useEffect } from "react"
+import { auth } from "../API/firebase"
 
-// const axiosInstance = axios.create({
-//     baseURL: baseUrl,
-//     timeout: 5000,
-//     headers: {
-//         Authorization: localStorage.getItem('access_token')
-//             ? 'JWT ' + localStorage.getItem('access_token')
-//             : null,
-//         'Content-Type': 'application/json',
-//         accept: 'application/json',
-//     },
+const AuthContext = React.createContext()
 
-// });
-// import React, { useContext, useState, useEffect } from "react"
-// import { auth } from "../firebase"
+export function useAuth() {
+    return useContext(AuthContext)
+}
 
-// const AuthContext = React.createContext()
+export function AuthProvider({ children }) {
+    const [currentUser, setCurrentUser] = useState()
+    const [loading, setLoading] = useState(true)
 
-// export function useAuth() {
-//     return useContext(AuthContext)
-// }
+    function signup(email, password) {
+        return auth.createUserWithEmailAndPassword(email, password)
+    }
 
-// export function AuthProvider({ children }) {
-//     const [currentUser, setCurrentUser] = useState()
-//     const [loading, setLoading] = useState(true)
+    function login(email, password) {
+        return auth.signInWithEmailAndPassword(email, password)
+    }
 
-//     function signup(email, password, password2) {
-//         return auth.createUserWithEmailAndPassword(email, password, password2)
-//     }
+    function logout() {
+        return auth.signOut()
+    }
 
-//     function login(email, password) {
-//         return auth.signInWithEmailAndPassword(email, password)
-//     }
+    function resetPassword(email) {
+        return auth.sendPasswordResetEmail(email)
+    }
 
-//     function logout() {
-//         return auth.signOut()
-//     }
+    function updateEmail(email) {
+        return currentUser.updateEmail(email)
+    }
 
-//     function resetPassword(email) {
-//         return auth.sendPasswordResetEmail(email)
-//     }
+    function updatePassword(password) {
+        return currentUser.updatePassword(password)
+    }
 
-//     function updateEmail(email) {
-//         return currentUser.updateEmail(email)
-//     }
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged(user => {
+            setCurrentUser(user)
+            setLoading(false)
+        })
 
-//     function updatePassword(password) {
-//         return currentUser.updatePassword(password)
-//     }
+        return unsubscribe
+    }, [])
 
-//     useEffect(() => {
-//         const unsubscribe = auth.onAuthStateChanged(user => {
-//             setCurrentUser(user)
-//             setLoading(false)
-//         })
+    const value = {
+        currentUser,
+        login,
+        signup,
+        logout,
+        resetPassword,
+        updateEmail,
+        updatePassword
+    }
 
-//         return unsubscribe
-//     }, [])
-
-//     const value = {
-//         currentUser,
-//         login,
-//         signup,
-//         logout,
-//         resetPassword,
-//         updateEmail,
-//         updatePassword
-//     }
-
-//     return (
-//         <AuthContext.Provider value={value}>
-//             {!loading && children}
-//         </AuthContext.Provider>
-//     )
-// }
+    return (
+        <AuthContext.Provider value={value}>
+            {!loading && children}
+        </AuthContext.Provider>
+    )
+}

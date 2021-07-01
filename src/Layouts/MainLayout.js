@@ -131,6 +131,7 @@ import FooterSocial from "../components/FooterSocial/FooterSocial";
 import { Fab } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import Logout from "../components/Auth/Logout/logout";
+import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
 import { useHistory } from "react-router";
 import { Link, NavLink } from "react-router-dom";
 
@@ -191,7 +192,8 @@ export default function MainLayout(props) {
                 <SearchModal />
                 <Link to="/login">
                   <AccountCircleOutlinedIcon className={classes.accountIcon} />
-                  {localStorage.getItem('access_token') ? <Logout />
+
+                  {localStorage.getItem('access_token') ? <ExitToAppOutlinedIcon className={classes.accountExitIcon} />
                     : null
                   }
                 </Link>
@@ -216,6 +218,7 @@ export default function MainLayout(props) {
 
           </Fab> : null
           }
+
         </Container>
       </main>
       <Footer />

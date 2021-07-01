@@ -337,15 +337,28 @@ export default function StoreContextProvider(props) {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
   const fetchProducts = async () => {
-    // const response = await axios.get(${URL}/api/v1/reviews/);
+    // const response = await axios.get(`${URL}/api/v1/reviews/`);
     // const products = response.data.results;
     const response = await axios.get(`${localURL}/products`);
     const products = response.data;
-    // console.log(response);
+    console.log(response);
 
     dispatch({
       type: "SET_PRODUCTS",
       payload: products,
+    });
+  };
+
+
+  const fetchSearchProducts = async (value) => {
+    const response = await axios.get(`${localURL}/products/?q=${value}`);
+    const products = response.data;
+
+    dispatch({
+      type: 'SET_PRODUCTS',
+      payload: {
+        data: products,
+      },
     });
   };
 
@@ -376,10 +389,10 @@ export default function StoreContextProvider(props) {
 
 
   const createProduct = async (product) => {
-    const response = await axios.post(`${URL}/api/v1/reviews/, product`);
-    // const response = await axios.post(${localURL}/products, product);
+    // const response = await axios.post(`${URL}/api/v1/reviews/`, product);
+    const response = await axios.post(`${localURL}/products`, product);
     const createProduct = response.data;
-
+    console.log(product);
     dispatch({
       type: "ADD_PRODUCT",
       payload: createProduct,
@@ -397,7 +410,7 @@ export default function StoreContextProvider(props) {
   };
 
   const updateProduct = async (id, data) => {
-    await axios.patch(`${localURL}/products/${id}, data`);
+    await axios.patch(`${localURL}/products/${id}`, data);
     dispatch({
       type: "CLEAR_PRODUCT",
     });
@@ -409,6 +422,7 @@ export default function StoreContextProvider(props) {
         categories: state.categories,
         productDetail: state.productDetail,
         fetchProducts,
+        fetchSearchProducts,
         fetchProductDetail,
         fetchCategories,
         createProduct,

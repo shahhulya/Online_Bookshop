@@ -22,12 +22,12 @@ export default function ProductCreatePage() {
   const [inputValue, setInputValue] = React.useState("");
 
   const initialValues = {
-    title: "",
-    book_author: "",
-    preview: "",
-    review: "",
-    category: "",
-    image: "",
+    title: '',
+    book_author: '',
+    preview: '',
+    review: '',
+    category: null,
+    image: '',
   };
 
   const validationSchema = Yup.object({
@@ -35,7 +35,9 @@ export default function ProductCreatePage() {
     book_author: Yup.string().required("Обязательное поле!"),
     preview: Yup.string().required("Обязательное поле!"),
     review: Yup.string().required("Обязательное поле!"),
-    category: Yup.string().required("Обязательное поле!"),
+    // category: Yup.string().required("Обязательное поле!"),
+    category: Yup.number().typeError('Введите число!'),
+    //   .required('Обязательное поле!'),
     image: Yup.string().required("Обязательное поле!"),
   });
 
