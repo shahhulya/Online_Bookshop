@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -20,6 +20,7 @@ import { Fab } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import Logout from "../components/Auth/Logout/logout";
 import { useHistory } from "react-router";
+import Tooltip from "@material-ui/core/Tooltip";
 import { Link, NavLink } from "react-router-dom";
 
 function ElevationScroll(props) {
@@ -46,6 +47,26 @@ ElevationScroll.propTypes = {
    */
   window: PropTypes.func,
 };
+const account = localStorage.getItem("account");
+
+// const accountCheck = () =>
+//   account ? (
+//     <Link to="/account">
+//       <Tooltip title="account page">
+//         <AccountCircleOutlinedIcon className={classes.accountIcon} />
+//       </Tooltip>
+//     </Link>
+//   ) : (
+//     <Link to="/login">
+//       <Tooltip title="Login">
+//         <AccountCircleOutlinedIcon className={classes.accountIcon} />
+//       </Tooltip>
+//     </Link>
+//   );
+
+// useEffect(() => {
+//   accountCheck();
+// }, []);
 
 export default function MainLayout(props) {
   const history = useHistory();
@@ -74,14 +95,38 @@ export default function MainLayout(props) {
                 <Typography variant="h6">Авторы</Typography>
                 <Typography variant="h6">Жанры</Typography>
                 <Typography variant="h6">Категории</Typography>
+                <Typography variant="h6">{account}</Typography>
               </div>
               <div className={classes.top__menu2}>
                 <SearchModal />
+
+                {account ? (
+                  <Link to="/account">
+                    <Tooltip title="account page">
+                      <AccountCircleOutlinedIcon
+                        className={classes.accountIcon}
+                      />
+                    </Tooltip>
+                  </Link>
+                ) : (
+                  <Link to="/login">
+                    <Tooltip title="Login">
+                      <AccountCircleOutlinedIcon
+                        className={classes.accountIcon}
+                      />
+                    </Tooltip>
+                  </Link>
+                )}
+
                 <Link to="/login">
+<<<<<<< HEAD
+                  <Logout />
+=======
                   <AccountCircleOutlinedIcon className={classes.accountIcon} />
                   {localStorage.getItem('access_token') ? <Logout />
                     : null
                   }
+>>>>>>> 26dab25b1c9945571e2f10201516cb366a3b5a59
                 </Link>
               </div>
             </div>
@@ -90,14 +135,16 @@ export default function MainLayout(props) {
       </ElevationScroll>
       <Toolbar />
       <main style={{ backgroundColor: "#0f0d19" }}>
-        <Fab
-          onClick={() => history.push("/products/create")}
-          style={{ position: "fixed", top: "50%", right: 15 }}
-          color="secondary"
-          aria-label="add"
-        >
-          <AddIcon />
-        </Fab>
+        <Link to="/products/create">
+          <Fab
+            // onClick={() => history.push("/products/create")}
+            style={{ position: "fixed", top: "50%", right: 15 }}
+            color="secondary"
+            aria-label="add"
+          >
+            <AddIcon />
+          </Fab>
+        </Link>
         <Container>{props.children}</Container>
       </main>
       <Footer />

@@ -20,23 +20,23 @@ export default function CategoryPage() {
 
   return (
     <MainLayout>
-
       <h2 className={classes.categoryName}>{name}</h2>
       <ProductsList products={filtred} />
 
-//       {products.map((product) =>
+      {products.map(
+        (product) =>
+          product.category.name == name ? (
+            <ProductsList products={filtred} />
+          ) : (
+            ""
+          )
 
-//         product.category.name == name ? <ProductsList products={filtred} /> : ""
-
-//         //         product.category.name == name ? (
-//         //           <ProductsList products={products} />
-//         //         ) : (
-//         //           ""
-//         //         )
-
-//       )}s
-
-// >>>>>>> master
+        //         product.category.name == name ? (
+        //           <ProductsList products={products} />
+        //         ) : (
+        //           ""
+        //         )
+      )}
     </MainLayout>
   );
 }
