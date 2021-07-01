@@ -1,5 +1,7 @@
+import { AddComment } from "@material-ui/icons";
 import axios from "axios";
 import React, { useReducer } from "react";
+import axiosInstance from "../ApiAuth";
 
 const INIT_STATE = {
   products: [],
@@ -61,11 +63,11 @@ export default function StoreContextProvider(props) {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
   const fetchProducts = async () => {
-    // const response = await axios.get(`${URL}/api/v1/reviews/`);
-    // const products = response.data.results;
-    const response = await axios.get(`${localURL}/products`);
-    const products = response.data;
-    console.log(products);
+    const response = await axios.get(`${URL}/api/v1/reviews/`);
+    const products = response.data.results;
+    // const response = await axios.get(`${localURL}/products`);
+    // const products = response.data;
+    // console.log(products);
 
     dispatch({
       type: "SET_PRODUCTS",
@@ -74,8 +76,8 @@ export default function StoreContextProvider(props) {
   };
 
   const fetchProductDetail = async (id) => {
-    // const response = await axios.get(`${URL}/api/v1/review/${id}`);
-    const response = await axios.get(`${localURL}/products/${id}`);
+    const response = await axios.get(`${URL}/api/v1/review/${id}`);
+    // const response = await axios.get(`${localURL}/products/${id}`);
     const productDetail = response.data;
 
     dispatch({
@@ -85,10 +87,10 @@ export default function StoreContextProvider(props) {
   };
 
   const fetchCategories = async () => {
-    // const response = await axios.get(`${URL}/api/v1/categories/list/`);
-    const response = await axios.get(`${localURL}/categories`);
+    const response = await axios.get(`${URL}/api/v1/categories/list/`);
+    // const response = await axios.get(`${localURL}/categories`);
     const categories = response.data;
-    console.log(categories);
+    // console.log(categories);
 
     dispatch({
       type: "SET_CATEGORIES",
@@ -97,7 +99,11 @@ export default function StoreContextProvider(props) {
   };
 
   const createProduct = async (product) => {
-    const response = await axios.post(`${URL}/api/v1/reviews/`, product);
+    console.log(product);
+    const response = await axiosInstance.post(
+      `${URL}/api/v1/reviews/`,
+      product
+    );
     // const response = await axios.post(`${localURL}/products`, product);
     const createProduct = response.data;
 
@@ -110,19 +116,34 @@ export default function StoreContextProvider(props) {
   };
 
   const deleteProduct = async (id) => {
-    await axios.delete(`${localURL}/products/${id}`);
+    // await axios.delete(`${localURL}/products/${id}`);
+    await axiosInstance.delete(`${URL}/api/v1/review/${id}/`);
     dispatch({
       type: "REMOVE_PRODUCT",
       payload: id,
     });
   };
 
-  const updateProduct = async (id, data) => {
-    await axios.patch(`${localURL}/products/${id}, data`);
+  const updateProduct = async (id, formData) => {
+    // await axios.patch(`${localURL}/products/${id},` data);
+    await axiosInstance.patch(`${URL}/api/v1/review/${id}/`, formData);
+
     dispatch({
       type: "CLEAR_PRODUCT",
     });
   };
+
+  const addComment = async (id, body) => {
+    axiosInstance.post(`${URL}/api/v1/comments/`, {
+      body: body,
+      review: id,
+    });
+  };
+
+  const deleteComment = async (id) => {
+    axiosInstance.delete(`${URL}/api/v1/comments/${id}`);
+  };
+
   return (
     <storeContext.Provider
       value={{
@@ -135,6 +156,8 @@ export default function StoreContextProvider(props) {
         createProduct,
         deleteProduct,
         updateProduct,
+        addComment,
+        deleteComment,
       }}
     >
       {props.children}
