@@ -1,4 +1,6 @@
+
 import { AddComment, IndeterminateCheckBox } from "@material-ui/icons";
+
 import axios from "axios";
 import React, { useReducer } from "react";
 import axiosInstance from "../ApiAuth";
@@ -44,6 +46,7 @@ const reducer = (state = INIT_STATE, action) => {
         ...state,
         productDetail: null,
       };
+
     case "ADD_COMMENT":
       console.log(action.payload);
       return {
@@ -62,6 +65,7 @@ const reducer = (state = INIT_STATE, action) => {
           comments: action.payload,
         },
       };
+
     // case "SET_CATEGORY_DETAIL":
     //   return {
     //     ...state,

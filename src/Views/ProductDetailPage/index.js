@@ -2,19 +2,16 @@ import React, { useContext, useState } from "react";
 import MainLayout from "../../Layouts/MainLayout";
 import classes from "./productDetailPage.module.css";
 import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
-
 import { storeContext } from "../../Contexts/StoreContext";
 import { useHistory, useParams } from "react-router";
 import { useEffect } from "react";
 import { notifySuccess } from "../../helpers/notifiers";
 import DeleteSweepIcon from "@material-ui/icons/DeleteSweep";
 import CreateIcon from "@material-ui/icons/Create";
-import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
-import CommentInput from "../../components/Comments/CommentList";
-import CommentList from "../../components/Comments/CommentInput";
-import Box from "@material-ui/core/Box";
-import Grid from "@material-ui/core/Grid";
+import Community from "../../components/Comments/Community";
+
+import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
 export default function ProductDetailPage() {
   const {

@@ -97,7 +97,7 @@
 //       history.push(`/products/search/${searchValue}`);
 //     }
 //   };
-
+// 
 //   return (
 //     <div className={classes.search}>
 //       <div className={classes.searchIcon}>

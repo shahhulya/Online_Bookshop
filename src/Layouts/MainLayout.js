@@ -18,10 +18,12 @@ import Footer from "../components/Footer/Footer";
 import FooterSocial from "../components/FooterSocial/FooterSocial";
 import { Fab } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
-import Logout from "../components/Auth/Logout/logout";
 import { useHistory } from "react-router";
+import Logout from "../components/Auth/Logout/logout";
+
 import Tooltip from "@material-ui/core/Tooltip";
 import { Link, NavLink } from "react-router-dom";
+
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -89,13 +91,15 @@ export default function MainLayout(props) {
             <div className={classes.nav__content}>
               <div className={classes.top__menu}>
                 <Link className={classes.link_main} to="/">
-                  <Typography variant="h6">Главное</Typography>
+                  <Typography variant="h6">Main</Typography>
                 </Link>
-                <Typography variant="h6">Книги</Typography>
-                <Typography variant="h6">Авторы</Typography>
-                <Typography variant="h6">Жанры</Typography>
-                <Typography variant="h6">Категории</Typography>
+                <Typography variant="h6">Books</Typography>
+                <Typography variant="h6">Authors</Typography>
+                <Typography variant="h6">Genres</Typography>
+                <Typography variant="h6">Categories</Typography>
+
                 <Typography variant="h6">{account}</Typography>
+
               </div>
               <div className={classes.top__menu2}>
                 <SearchModal />
@@ -119,6 +123,8 @@ export default function MainLayout(props) {
                 )}
 
                 <Link to="/login">
+
+                  <AccountCircleOutlinedIcon className={classes.accountIcon} />
                   <Logout />
                 </Link>
               </div>
