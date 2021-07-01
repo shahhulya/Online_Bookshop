@@ -78,8 +78,8 @@ export default function ProductDetailPage() {
             <p>{productDetail.review}</p>
           </div>
 
-          <form onSubmit={handleCommentAdd}>
-            <div className={classes.comments}>
+          <form onSubmit={handleCommentAdd} className={classes.comments}>
+            <div>
               {productDetail.comments.map((comment) => (
                 <div className={classes.comment} key={comment.id}>
                   <p>{comment.body}</p>

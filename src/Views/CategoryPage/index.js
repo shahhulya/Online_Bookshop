@@ -22,21 +22,6 @@ export default function CategoryPage() {
     <MainLayout>
       <h2 className={classes.categoryName}>{name}</h2>
       <ProductsList products={filtred} />
-
-      {products.map(
-        (product) =>
-          product.category.name == name ? (
-            <ProductsList products={filtred} />
-          ) : (
-            ""
-          )
-
-        //         product.category.name == name ? (
-        //           <ProductsList products={products} />
-        //         ) : (
-        //           ""
-        //         )
-      )}
     </MainLayout>
   );
 }

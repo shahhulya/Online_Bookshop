@@ -84,6 +84,8 @@
 
 .comments {
   color: #fff;
+  max-width: 300px;
+  margin: 20px auto;
 }
 
 .comment {
