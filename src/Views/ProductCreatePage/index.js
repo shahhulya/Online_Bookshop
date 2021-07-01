@@ -20,13 +20,13 @@ export default function ProductCreatePage() {
 
   const [value, setValue] = React.useState(null);
   const [inputValue, setInputValue] = React.useState("");
-
+  console.log(inputValue)
   const initialValues = {
     title: '',
     book_author: '',
     preview: '',
     review: '',
-    category: null,
+    category: '',
     image: '',
   };
 
@@ -35,11 +35,13 @@ export default function ProductCreatePage() {
     book_author: Yup.string().required("Обязательное поле!"),
     preview: Yup.string().required("Обязательное поле!"),
     review: Yup.string().required("Обязательное поле!"),
-    // category: Yup.string().required("Обязательное поле!"),
-    category: Yup.number().typeError('Введите число!'),
+    category: Yup.string().required("Обязательное поле!"),
+    // category: Yup.number().typeError('Введите число!'),
     //   .required('Обязательное поле!'),
-    image: Yup.string().required("Обязательное поле!"),
+    // image: Yup.string().required("Обязательное поле!"),
   });
+
+  // console.log(initialValues)
 
   const onSubmit = (values, actions) => {
     createProduct({
@@ -99,42 +101,44 @@ export default function ProductCreatePage() {
               <ErrorMessage component={TextError} name="review" />
 
               <label>Category</label>
-              {/* <Field
+              <Field
                 variant="outlined"
                 className={classes.input}
                 name="category"
                 as={TextField}
-              /> */}
+              />
 
-              <div className={classes.category}>
+              {/* //<div className={classes.category}>
                 {/* <div>{`value: ${value !== null ? `'${value}'` : "null"}`}</div>
                 <div>{`inputValue: '${inputValue}'`}</div>
                 <br /> */}
-                <Autocomplete
-                  className={classes.autocomplete}
-                  value={value}
-                  onChange={(event, newValue) => {
-                    setValue(newValue);
-                  }}
-                  inputValue={inputValue}
-                  onInputChange={(event, newInputValue) => {
-                    setInputValue(newInputValue);
-                  }}
-                  id="controllable-states-demo"
-                  options={options.map((category) => category.name)}
-                  style={{ width: 300 }}
-                  renderInput={(params) => (
-                    <Field
-                      {...params}
-                      name="category"
-                      as={TextField}
-                      // label="Controllable"
-                      variant="outlined"
-                    />
-                  )}
-                />
-              </div>
-              <ErrorMessage component={TextError} name="category" />
+              {/* <Autocomplete */}
+              {/* className={classes.autocomplete} */}
+              {/* value={value}
+                onChange={(event, newValue) => {
+                  setValue(newValue);
+                }}
+                inputValue={inputValue}
+                onInputChange={(event, newInputValue) => {
+                  setInputValue(newInputValue);
+                }}
+                id="controllable-states-demo"
+                options={options.map((category) => category.name)}
+
+                style={{ width: 300 }}
+
+                renderInput={(params) => (
+                  <Field
+                    {...params}
+                    name="category"
+                    as={TextField}
+                    // label="Controllable"
+                    variant="outlined"
+                  />
+                )}
+              />
+              </div>  */}
+              < ErrorMessage component={TextError} name="category" />
 
               <label>Image</label>
               <Field
@@ -151,6 +155,6 @@ export default function ProductCreatePage() {
           )}
         </Formik>
       </div>
-    </MainLayout>
+    </MainLayout >
   );
 }

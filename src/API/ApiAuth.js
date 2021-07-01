@@ -4,7 +4,7 @@ import axios from 'axios';
 const baseURL = 'http://34.89.166.252/api/v1/';
 const axiosInstance = axios.create({
     baseURL: baseURL,
-    timeout: 5000,
+    timeout: 10000,
     headers: {
         Authorization: localStorage.getItem('access_token')
             ? 'JWT ' + localStorage.getItem('access_token')

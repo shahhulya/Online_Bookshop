@@ -276,6 +276,7 @@
 
 import axios from "axios";
 import React, { useReducer } from "react";
+import axiosInstance from "../API/ApiAuth";
 
 const INIT_STATE = {
   products: [],
@@ -389,16 +390,31 @@ export default function StoreContextProvider(props) {
 
 
   const createProduct = async (product) => {
-    // const response = await axios.post(`${URL}/api/v1/reviews/`, product);
-    const response = await axios.post(`${localURL}/products`, product);
+
+    const response = await axiosInstance.post(`${URL}api/v1/reviews/`, product);
+    //   //   // const response = await axios.post(`${localURL}/products`, product);
     const createProduct = response.data;
-    console.log(product);
+
     dispatch({
       type: "ADD_PRODUCT",
       payload: createProduct,
     });
 
     return createProduct.id;
+    // const accesss = JSON.parse(`${localStorage.getItem("access_token")}`)
+    // const response = await axios.post(`${URL}/api/v1/reviews/`, product, {
+    //   headers: {
+    //     Authorization: `Bearer ${accesss}`
+    //   }
+    // }
+    // );
+    // const createdProduct = response.data;
+
+    // dispatch({
+    //   type: 'ADD_PRODUCT',
+    //   payload: createdProduct,
+    // });
+
   };
 
   const deleteProduct = async (id) => {
