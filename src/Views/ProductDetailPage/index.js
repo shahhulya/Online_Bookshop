@@ -26,11 +26,11 @@ export default function ProductDetailPage() {
 
   const handleCommentAdd = (e) => {
     e.preventDefault();
-    addComment(productDetail.id, title);
+    addComment(productDetail.id, title, productDetail.owner);
   };
 
-  const handleDelete = (commentId) => {
-    deleteComment(commentId);
+  const handleDelete = (commentId, owner) => {
+    deleteComment(commentId, productDetail.id, owner);
   };
 
   const { id } = useParams();
@@ -73,6 +73,7 @@ export default function ProductDetailPage() {
             </p>
           </div>
           <div className={classes.book_description}>
+            <h3>Owner: {productDetail.owner}</h3>
             <h2>{productDetail.title}</h2>
             <h3>by {productDetail.book_author}</h3>
             <p>{productDetail.review}</p>
@@ -80,11 +81,13 @@ export default function ProductDetailPage() {
 
           <form onSubmit={handleCommentAdd} className={classes.comments}>
             <div>
-              {productDetail.comments.map((comment) => (
+              {productDetail.comments.map((comment, index) => (
                 <div className={classes.comment} key={comment.id}>
                   <p>{comment.body}</p>
                   <p>{comment.owner}</p>
-                  <HighlightOffIcon onClick={() => handleDelete(comment.id)} />
+                  <HighlightOffIcon
+                    onClick={() => handleDelete(comment.id, comment.owner)}
+                  />
                 </div>
               ))}
             </div>

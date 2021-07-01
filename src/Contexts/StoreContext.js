@@ -1,12 +1,10 @@
 
-import { AddComment } from "@material-ui/icons";
+import { AddComment, IndeterminateCheckBox } from "@material-ui/icons";
+
 import axios from "axios";
 import React, { useReducer } from "react";
-<<<<<<< HEAD
 import axiosInstance from "../API/ApiAuth";
-=======
-import axiosInstance from "../ApiAuth";
->>>>>>> 136d6e7940b0d895cf6d6b8d4c0d1022833fd74d
+
 
 const INIT_STATE = {
   products: [],
@@ -50,6 +48,25 @@ const reducer = (state = INIT_STATE, action) => {
         productDetail: null,
       };
 
+    case "ADD_COMMENT":
+      console.log(action.payload);
+      return {
+        ...state,
+        productDetail: {
+          ...state.productDetail,
+          comments: [...state.productDetail.comments, action.payload],
+        },
+      };
+    case "DELETE_COMMENT":
+      console.log(action.payload);
+      return {
+        ...state,
+        productDetail: {
+          ...state.productDetail,
+          comments: action.payload,
+        },
+      };
+
     // case "SET_CATEGORY_DETAIL":
     //   return {
     //     ...state,
@@ -69,19 +86,19 @@ export default function StoreContextProvider(props) {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
   const fetchProducts = async () => {
-<<<<<<< HEAD
+    // <<<<<<< HEAD
     // const response = await axios.get(`${URL}/api/v1/reviews/`);
     // const products = response.data.results;
     const response = await axios.get(`${localURL}/products`);
     const products = response.data;
     console.log(response);
-=======
-    const response = await axios.get(`${URL}/api/v1/reviews/`);
-    const products = response.data.results;
-    // const response = await axios.get(`${localURL}/products`);
-    // const products = response.data;
-    // console.log(products);
->>>>>>> 136d6e7940b0d895cf6d6b8d4c0d1022833fd74d
+    // =======
+    //     const response = await axios.get(`${URL}/api/v1/reviews/`);
+    //     const products = response.data.results;
+    //     // const response = await axios.get(`${localURL}/products`);
+    //     // const products = response.data;
+    //     // console.log(products);
+    // >>>>>>> 136d6e7940b0d895cf6d6b8d4c0d1022833fd74d
 
     dispatch({
       type: "SET_PRODUCTS",
@@ -126,18 +143,18 @@ export default function StoreContextProvider(props) {
   };
 
   const createProduct = async (product) => {
-<<<<<<< HEAD
+
 
     const response = await axiosInstance.post(`${URL}api/v1/reviews/`, product);
     //   //   // const response = await axios.post(`${localURL}/products`, product);
-=======
-    console.log(product);
-    const response = await axiosInstance.post(
-      `${URL}/api/v1/reviews/`,
-      product
-    );
-    // const response = await axios.post(`${localURL}/products`, product);
->>>>>>> 136d6e7940b0d895cf6d6b8d4c0d1022833fd74d
+    // =======
+    //     console.log(product);
+    //     const response = await axiosInstance.post(
+    //       `${URL}/api/v1/reviews/`,
+    //       product
+    //     );
+    //     // const response = await axios.post(`${localURL}/products`, product);
+    // >>>>>>> 136d6e7940b0d895cf6d6b8d4c0d1022833fd74d
     const createProduct = response.data;
 
     dispatch({
@@ -185,15 +202,35 @@ export default function StoreContextProvider(props) {
     });
   };
 
-  const addComment = async (id, body) => {
+  const addComment = async (id, body, owner) => {
+    dispatch({
+      type: "ADD_COMMENT",
+      payload: { id, body, owner },
+    });
     axiosInstance.post(`${URL}/api/v1/comments/`, {
       body: body,
       review: id,
     });
   };
 
-  const deleteComment = async (id) => {
+  const deleteComment = async (id, productId, owner) => {
+    console.log(id);
+    const user = localStorage.getItem("account");
+    if (owner !== user) {
+      return;
+    }
     axiosInstance.delete(`${URL}/api/v1/comments/${id}`);
+
+    const comments = state.productDetail.comments.filter(
+      (item) => item.id !== id
+    );
+
+    console.log(comments);
+
+    dispatch({
+      type: "DELETE_COMMENT",
+      payload: comments,
+    });
   };
 
   return (

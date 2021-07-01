@@ -106,7 +106,7 @@ export default function Login() {
         localStorage.setItem("refresh_token", res.data.refresh);
         axiosInstance.defaults.headers["Authorization"] =
           "JWT " + localStorage.getItem("access_token");
-        // localStorage.setItem("account", res.data.email);
+        localStorage.setItem("account", res.data.email);
         history.push("/");
 
         console.log(res.data);
