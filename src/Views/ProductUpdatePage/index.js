@@ -32,6 +32,7 @@ export default function ProductUpdatePage() {
     if (productDetail) {
       setInitialValues({
         ...productDetail,
+        category: productDetail.category?.name,
       });
     }
   }, [productDetail]);

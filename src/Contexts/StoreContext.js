@@ -1,4 +1,4 @@
-import { AddComment } from "@material-ui/icons";
+import { AddComment, IndeterminateCheckBox } from "@material-ui/icons";
 import axios from "axios";
 import React, { useReducer } from "react";
 import axiosInstance from "../ApiAuth";
@@ -43,6 +43,24 @@ const reducer = (state = INIT_STATE, action) => {
       return {
         ...state,
         productDetail: null,
+      };
+    case "ADD_COMMENT":
+      console.log(action.payload);
+      return {
+        ...state,
+        productDetail: {
+          ...state.productDetail,
+          comments: [...state.productDetail.comments, action.payload],
+        },
+      };
+    case "DELETE_COMMENT":
+      console.log(action.payload);
+      return {
+        ...state,
+        productDetail: {
+          ...state.productDetail,
+          comments: action.payload,
+        },
       };
     // case "SET_CATEGORY_DETAIL":
     //   return {
@@ -133,15 +151,35 @@ export default function StoreContextProvider(props) {
     });
   };
 
-  const addComment = async (id, body) => {
+  const addComment = async (id, body, owner) => {
+    dispatch({
+      type: "ADD_COMMENT",
+      payload: { id, body, owner },
+    });
     axiosInstance.post(`${URL}/api/v1/comments/`, {
       body: body,
       review: id,
     });
   };
 
-  const deleteComment = async (id) => {
+  const deleteComment = async (id, productId, owner) => {
+    console.log(id);
+    const user = localStorage.getItem("account");
+    if (owner !== user) {
+      return;
+    }
     axiosInstance.delete(`${URL}/api/v1/comments/${id}`);
+
+    const comments = state.productDetail.comments.filter(
+      (item) => item.id !== id
+    );
+
+    console.log(comments);
+
+    dispatch({
+      type: "DELETE_COMMENT",
+      payload: comments,
+    });
   };
 
   return (
