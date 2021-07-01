@@ -8,24 +8,24 @@ export default function Footer() {
   return (
     <div className={classes.footer_wrapper}>
       <div className={classes.footer_section}>
-        <h3 style={{ color: "crimson" }}>Разделы</h3>
+        <h3 style={{ color: "crimson" }}>Sections</h3>
 
-        <li>Романы</li>
-        <li>Драмы</li>
-        <li>Обзоры</li>
+        <li>Novels</li>
+        <li>Dramas</li>
+        <li>Overview</li>
       </div>
 
       {/* </div> */}
       <div>
-        <h3 style={{ color: "crimson" }}> О нас</h3>
+        <h3 style={{ color: "crimson" }}> About Us</h3>
         <Link to="/AboutUsPage">
-          <li style={{ color: "white" }}>О компании</li>
+          <li style={{ color: "white" }}>About Company</li>
         </Link>
         <Link to="/AddressPage">
-          <li style={{ color: "white" }}>Адреса и контакты магазинов</li>
+          <li style={{ color: "white" }}>Contacts and addresses</li>
         </Link>
 
-        <li>Партнеры</li>
+        <li>Partners</li>
       </div>
     </div>
   );
