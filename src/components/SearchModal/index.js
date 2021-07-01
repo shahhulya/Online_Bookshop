@@ -24,7 +24,7 @@ export default function SearchModal() {
       <div onClick={handleOpen} className={classes.top__search}>
         <SearchIcon style={{ margin: "auto" }} />
         <Typography style={{ margin: "auto 0px" }} variant="p">
-          Поиск
+          Search
         </Typography>
       </div>
       <Modal
@@ -42,7 +42,7 @@ export default function SearchModal() {
         <Fade in={open}>
           <div className={classes.paper}>
             <CloseIcon className={classes.closeIcon} onClick={handleClose} />
-            <h1>Поиск</h1>
+            <h1>Search</h1>
             <input placeholder=" Авторы, персонажи, жанры"></input>
           </div>
         </Fade>

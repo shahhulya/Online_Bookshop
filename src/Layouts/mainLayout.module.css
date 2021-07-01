@@ -33,7 +33,6 @@
   transform: skewX(30deg);
   text-decoration: none;
   color: #fff;
-
 }
 
 .top__menu {
@@ -77,6 +76,7 @@
   color: #fff;
 }
 
+<<<<<<< HEAD
 .accountExitIcon {
   margin-left: 15px;
   color: #63606d;
@@ -93,6 +93,8 @@
   top: 50%;
   right: 15;
 }
+=======
+>>>>>>> 136d6e7940b0d895cf6d6b8d4c0d1022833fd74d
 .link_main {
   text-decoration: none;
   color: white;

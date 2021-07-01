@@ -1,4 +1,3 @@
-
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AddressPage from "./Views/AddressPage/index";
@@ -14,12 +13,14 @@ import ProductCreatePage from "./Views/ProductCreatePage/index";
 import SearchResultPage from "./Views/SearchResultPage/SearchResultPage";
 // import RegisterPage from "./Views/RegisterPage/index";
 import RegisterPage from "./Views/RegisterPage";
+import AccountPage from "./Views/AccountPage";
 
 export default function Routes() {
   return (
     <Router>
       <Switch>
         <Route exact path="/" component={MainPage} />
+        <Route exact path="/account" component={AccountPage} />
         <Route path="/register" component={RegisterPage} exact />
         <Route path="/login" component={LogInPage} exact />
         <Route path="/logout" component={Logout} exact />

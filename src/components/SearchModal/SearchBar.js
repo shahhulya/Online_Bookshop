@@ -89,6 +89,7 @@ export default function SearchBar() {
         history.push(`/products/${id}`);
     };
 
+<<<<<<< HEAD
     const handleSearchSubmit = (e) => {
         e.preventDefault();
         setFetchedProducts([]);
@@ -115,6 +116,34 @@ export default function SearchBar() {
                     inputProps={{ 'aria-label': 'search' }}
                 />
             </form>
+=======
+//   const handleSearchSubmit = (e) => {
+//     e.preventDefault();
+//     setFetchedProducts([]);
+//     setSearchValue('');
+//     if (searchValue) {
+//       history.push(`/products/search/${searchValue}`);
+//     }
+//   };
+// 
+//   return (
+//     <div className={classes.search}>
+//       <div className={classes.searchIcon}>
+//         <SearchIcon />
+//       </div>
+//       <form onSubmit={handleSearchSubmit}>
+//         <InputBase
+//           onChange={handleSearchChange}
+//           value={searchValue}
+//           placeholder="Поиск…"
+//           classes={{
+//             root: classes.inputRoot,
+//             input: classes.inputInput,
+//           }}
+//           inputProps={{ 'aria-label': 'search' }}
+//         />
+//       </form>
+>>>>>>> 136d6e7940b0d895cf6d6b8d4c0d1022833fd74d
 
             {fetchedProducts.length ? (
                 <Paper className={classes.searchList}>

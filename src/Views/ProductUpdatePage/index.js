@@ -24,13 +24,6 @@ export default function ProductUpdatePage() {
     useContext(storeContext);
 
   const { id } = useParams();
-
-  const options = categories.map((category) => category);
-  console.log(options);
-
-  const [value, setValue] = React.useState(null);
-  const [inputValue, setInputValue] = React.useState("");
-
   useEffect(() => {
     fetchProductDetail(id);
   }, []);
@@ -55,9 +48,16 @@ export default function ProductUpdatePage() {
   });
 
   const onSubmit = (values) => {
-    updateProduct(id, {
-      ...values,
-    }).then(() => {
+    let formData = new FormData();
+    formData.append("title", values.title);
+    formData.append("book_author", values.book_author);
+    formData.append("preview", values.preview);
+    formData.append("review", values.review);
+    formData.append("category", values.category);
+    formData.append("image", values.image);
+    console.log(formData);
+
+    updateProduct(id, formData).then(() => {
       notifySuccess("Продукт был изменен!");
       history.push(`/products/${id}`);
     });
@@ -72,7 +72,7 @@ export default function ProductUpdatePage() {
           onSubmit={onSubmit}
           enableReinitialize
         >
-          {({}) => (
+          {({ values, setFieldValue }) => (
             <Form className={classes.form}>
               <Typography variant="h4">Изменение продукта</Typography>
               <label>Title</label>
@@ -115,10 +115,16 @@ export default function ProductUpdatePage() {
               <ErrorMessage component={TextError} name="review" />
 
               <label>Category</label>
-              <div className={classes.category}>
-                {/* <div>{`value: ${value !== null ? `'${value}'` : "null"}`}</div>
+              <Field
+                className={classes.input}
+                name="category"
+                variant="outlined"
+                as={TextField}
+              />
+              {/* <div className={classes.category}>
+                <div>{`value: ${value !== null ? `'${value}'` : "null"}`}</div>
                 <div>{`inputValue: '${inputValue}'`}</div>
-                <br /> */}
+                <br />
                 <Autocomplete
                   className={classes.autocomplete}
                   value={value}
@@ -142,14 +148,16 @@ export default function ProductUpdatePage() {
                     />
                   )}
                 />
-              </div>
+              </div> */}
               <ErrorMessage component={TextError} name="category" />
 
               <label>Изображение</label>
-              <Field
+              <input
                 className={classes.input}
                 name="image"
+                type="file"
                 variant="outlined"
+                onChange={(e) => setFieldValue("image", e.target.files[0])}
                 as={TextField}
               />
               <ErrorMessage component={TextError} name="image" />

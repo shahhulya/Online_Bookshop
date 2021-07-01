@@ -1,8 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import MainLayout from "../../Layouts/MainLayout";
 import classes from "./productDetailPage.module.css";
 import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
-
 import { storeContext } from "../../Contexts/StoreContext";
 import { useHistory, useParams } from "react-router";
 import { useEffect } from "react";
@@ -10,14 +9,29 @@ import { notifySuccess } from "../../helpers/notifiers";
 import DeleteSweepIcon from "@material-ui/icons/DeleteSweep";
 import CreateIcon from "@material-ui/icons/Create";
 
-import CommentInput from "../../components/Comments/CommentList";
-import CommentList from "../../components/Comments/CommentInput";
-import Box from "@material-ui/core/Box";
-import Grid from "@material-ui/core/Grid";
+import Community from "../../components/Comments/Community";
+
+import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
 export default function ProductDetailPage() {
-  const { productDetail, fetchProductDetail, deleteProduct } =
-    useContext(storeContext);
+  const {
+    productDetail,
+    fetchProductDetail,
+    deleteProduct,
+    addComment,
+    deleteComment,
+  } = useContext(storeContext);
+
+  const [title, setTitle] = useState("");
+
+  const handleCommentAdd = (e) => {
+    e.preventDefault();
+    addComment(productDetail.id, title);
+  };
+
+  const handleDelete = (commentId) => {
+    deleteComment(commentId);
+  };
 
   const { id } = useParams();
   const history = useHistory();
@@ -63,8 +77,24 @@ export default function ProductDetailPage() {
             <h3>by {productDetail.book_author}</h3>
             <p>{productDetail.review}</p>
           </div>
-          {/* <CommentInput />
-          <CommentList /> */}
+
+          <form onSubmit={handleCommentAdd} className={classes.comments}>
+            <div>
+              {productDetail.comments.map((comment) => (
+                <div className={classes.comment} key={comment.id}>
+                  <p>{comment.body}</p>
+                  <p>{comment.owner}</p>
+                  <HighlightOffIcon onClick={() => handleDelete(comment.id)} />
+                </div>
+              ))}
+            </div>
+            <input
+              name="comment"
+              onChange={(e) => setTitle(e.target.value)}
+              // value={title}
+            />
+            <button>create</button>
+          </form>
         </>
       ) : (
         ""
