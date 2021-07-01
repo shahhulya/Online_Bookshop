@@ -32,8 +32,8 @@ export default function ProductDetailPage() {
     addComment(productDetail.id, title);
   };
 
-  const handleDelete = () => {
-    deleteComment(id);
+  const handleDelete = (commentId) => {
+    deleteComment(commentId);
   };
 
   const { id } = useParams();
@@ -81,14 +81,13 @@ export default function ProductDetailPage() {
             <p>{productDetail.review}</p>
           </div>
 
-<<<<<<< HEAD
           <form onSubmit={handleCommentAdd}>
             <div className={classes.comments}>
               {productDetail.comments.map((comment) => (
                 <div className={classes.comment} key={comment.id}>
                   <p>{comment.body}</p>
                   <p>{comment.owner}</p>
-                  <HighlightOffIcon onClick={handleDelete} />
+                  <HighlightOffIcon onClick={() => handleDelete(comment.id)} />
                 </div>
               ))}
             </div>
@@ -99,10 +98,6 @@ export default function ProductDetailPage() {
             />
             <button>create</button>
           </form>
-=======
-          {/* <CommentInput />
-          <CommentList /> */}
->>>>>>> 26dab25b1c9945571e2f10201516cb366a3b5a59
         </>
       ) : (
         ""
