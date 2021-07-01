@@ -29,7 +29,6 @@ export default function ProductsList({ products }) {
   return (
     <div className={classes.root}>
       <Grid className={classes.container} container spacing={10}>
-        <p></p>
         {products.map((product) => (
           <Grid key={product.id} item xs={12} sm={6} md={4} lg={3}>
             <Card data={product} />
